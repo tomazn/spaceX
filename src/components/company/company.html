@@ -1,0 +1,41 @@
+<!-- Generated template for the CompanyComponent component -->
+<div>
+  {{text}}
+</div>
+
+<div *ngIf="company">
+  name : {{company.name}}
+
+  founder :{{company.founder}}
+
+  founded : {{company.founded}}
+
+  employees : {{company.employees}}
+
+  vehicles : {{company.vehicles}}
+
+  launch_sites : {{company.launch_sites}}
+
+  test_sites : {{company.test_sites}}
+
+  ceo : {{company.ceo}}
+
+  cto : {{company.cto}}
+  
+  coo : {{company.coo}}
+  
+  cto_propulsion : {{company.cto_propulsion}}
+  
+  valuation : {{company.valuation}}
+  
+  <div *ngIf="company.headquarters">
+    headquarters adress: {{company.headquarters.address}}
+
+    headquarters city: {{company.headquarters.city}}
+  
+    headquarters state: {{company.headquarters.state}}
+  </div>
+
+  summary : {{company.summary}}
+
+</div>
