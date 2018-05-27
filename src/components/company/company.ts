@@ -13,19 +13,21 @@ import {company} from '../../model/company';
 })
 export class CompanyComponent {
 
-  text: string;
+  loadCompany: boolean = false;
   company: company = new company();
 
   constructor(private CompanyProvider: CompanyProvider) {
-    this.text = 'Hello World';
     this.getCompanyInfo();
-    console.log(this.company);
   }
 
   getCompanyInfo(): void {
+    this.loadCompany = true;
     this.CompanyProvider.getCompanyInfo()
     .then(
-      res => this.company = res,
+      res => {
+        this.company = res,
+        this.loadCompany = false
+      },
       error => console.log(error),
     )
   }

@@ -1,41 +1,72 @@
-<!-- Generated template for the CompanyComponent component -->
-<div>
-  {{text}}
-</div>
+<ion-card>
+        <img src="assets/imgs/spacex.png"/>
+        <ion-spinner *ngIf="loadCompany"></ion-spinner>
+        <ion-card-content *ngIf="company && !loadCompany">
+          <ion-card-title>
+              {{company.name}}
+            </ion-card-title>
+         
+            <p>
+              <u>founder :</u> {{company.founder}}
+            </p>
 
-<div *ngIf="company">
-  name : {{company.name}}
-
-  founder :{{company.founder}}
-
-  founded : {{company.founded}}
-
-  employees : {{company.employees}}
-
-  vehicles : {{company.vehicles}}
-
-  launch_sites : {{company.launch_sites}}
-
-  test_sites : {{company.test_sites}}
-
-  ceo : {{company.ceo}}
-
-  cto : {{company.cto}}
-  
-  coo : {{company.coo}}
-  
-  cto_propulsion : {{company.cto_propulsion}}
-  
-  valuation : {{company.valuation}}
-  
-  <div *ngIf="company.headquarters">
-    headquarters adress: {{company.headquarters.address}}
-
-    headquarters city: {{company.headquarters.city}}
-  
-    headquarters state: {{company.headquarters.state}}
-  </div>
-
-  summary : {{company.summary}}
-
-</div>
+            <p>
+                <u>founded :</u> {{company.founded}}
+            </p>
+            
+            <p>
+                <u>employees :</u> {{company.employees}}
+            </p>
+          
+            <p>
+                <u>vehicles :</u> {{company.vehicles}}
+            </p>
+          
+            <p>
+                <u>launch_sites :</u> {{company.launch_sites}}
+            </p>
+          
+            <p>
+                <u>test_sites :</u> {{company.test_sites}}
+            </p>
+          
+            <p>
+                <u>ceo :</u> {{company.ceo}}
+            </p>
+          
+            <p>
+                <u>cto :</u> {{company.cto}}
+            </p>
+            
+            <p>
+                <u>coo :</u> {{company.coo}}
+            </p>
+            
+            <p>
+                <u>cto_propulsion </u>: {{company.cto_propulsion}}
+            </p>
+            
+            <p>
+                <u>valuation :</u> {{company.valuation}}
+            </p>
+            
+            <div *ngIf="company.headquarters">
+              <p>
+                  <u>headquarters adress :</u> {{company.headquarters.address}}
+              </p>
+          
+             <p>
+                <u>headquarters city :</u> {{company.headquarters.city}}
+             </p>
+            
+              <p>
+                  <u>headquarters state :</u> {{company.headquarters.state}}
+              </p>
+            </div>
+          
+            <p>
+                <u>summary :</u> {{company.summary}}
+            </p>
+          
+        </ion-card-content>
+      </ion-card>
