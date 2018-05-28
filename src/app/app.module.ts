@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { CompanyProvider } from '../providers/company/company';
 import { CompanyComponent } from '../components/company/company';
 import { HttpClientModule } from '@angular/common/http';
+import { RocketsProvider } from '../providers/rockets/rockets';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CompanyProvider
+    CompanyProvider,
+    RocketsProvider
   ]
 })
 export class AppModule {}

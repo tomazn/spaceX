@@ -1,3 +1,13 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Company info</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content>
 <ion-card>
         <img src="assets/imgs/spacex.png"/>
         <ion-spinner *ngIf="loadCompany"></ion-spinner>
@@ -70,3 +80,5 @@
           
         </ion-card-content>
       </ion-card>
+
+    </ion-content>
