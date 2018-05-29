@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RocketsProvider } from '../providers/rockets/rockets';
 import { CapsulesProvider } from '../providers/capsules/capsules';
 import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
+import { CoresProvider } from '../providers/cores/cores';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
     CompanyProvider,
     RocketsProvider,
     CapsulesProvider,
-    LaunchpadsProvider
+    LaunchpadsProvider,
+    CoresProvider
   ]
 })
 export class AppModule {}
