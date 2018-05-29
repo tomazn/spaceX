@@ -12,6 +12,7 @@ import { CompanyProvider } from '../providers/company/company';
 import { CompanyComponent } from '../components/company/company';
 import { HttpClientModule } from '@angular/common/http';
 import { RocketsProvider } from '../providers/rockets/rockets';
+import { CapsulesProvider } from '../providers/capsules/capsules';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { RocketsProvider } from '../providers/rockets/rockets';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CompanyProvider,
-    RocketsProvider
+    RocketsProvider,
+    CapsulesProvider
   ]
 })
 export class AppModule {}
