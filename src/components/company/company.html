@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Company info</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content>
+<ion-card>
+        <img src="assets/imgs/spacex.png"/>
+        <ion-spinner *ngIf="loadCompany"></ion-spinner>
+        <ion-card-content *ngIf="company && !loadCompany">
+          <ion-card-title>
+              {{company.name}}
+            </ion-card-title>
+         
+            <p>
+              <u>founder :</u> {{company.founder}}
+            </p>
+
+            <p>
+                <u>founded :</u> {{company.founded}}
+            </p>
+            
+            <p>
+                <u>employees :</u> {{company.employees}}
+            </p>
+          
+            <p>
+                <u>vehicles :</u> {{company.vehicles}}
+            </p>
+          
+            <p>
+                <u>launch_sites :</u> {{company.launch_sites}}
+            </p>
+          
+            <p>
+                <u>test_sites :</u> {{company.test_sites}}
+            </p>
+          
+            <p>
+                <u>ceo :</u> {{company.ceo}}
+            </p>
+          
+            <p>
+                <u>cto :</u> {{company.cto}}
+            </p>
+            
+            <p>
+                <u>coo :</u> {{company.coo}}
+            </p>
+            
+            <p>
+                <u>cto_propulsion </u>: {{company.cto_propulsion}}
+            </p>
+            
+            <p>
+                <u>valuation :</u> {{company.valuation}}
+            </p>
+            
+            <div *ngIf="company.headquarters">
+              <p>
+                  <u>headquarters adress :</u> {{company.headquarters.address}}
+              </p>
+          
+             <p>
+                <u>headquarters city :</u> {{company.headquarters.city}}
+             </p>
+            
+              <p>
+                  <u>headquarters state :</u> {{company.headquarters.state}}
+              </p>
+            </div>
+          
+            <p>
+                <u>summary :</u> {{company.summary}}
+            </p>
+          
+        </ion-card-content>
+      </ion-card>
+
+    </ion-content>

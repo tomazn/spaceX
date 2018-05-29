@@ -8,27 +8,44 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CompanyProvider } from '../providers/company/company';
+import { CompanyComponent } from '../components/company/company';
+import { HttpClientModule } from '@angular/common/http';
+import { RocketsProvider } from '../providers/rockets/rockets';
+import { CapsulesProvider } from '../providers/capsules/capsules';
+import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
+import { CoresProvider } from '../providers/cores/cores';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      preloadModules: true
+    }),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    CompanyComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CompanyProvider,
+    RocketsProvider,
+    CapsulesProvider,
+    LaunchpadsProvider,
+    CoresProvider
   ]
 })
 export class AppModule {}
