@@ -13,6 +13,7 @@ import { CompanyComponent } from '../components/company/company';
 import { HttpClientModule } from '@angular/common/http';
 import { RocketsProvider } from '../providers/rockets/rockets';
 import { CapsulesProvider } from '../providers/capsules/capsules';
+import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CapsulesProvider } from '../providers/capsules/capsules';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CompanyProvider,
     RocketsProvider,
-    CapsulesProvider
+    CapsulesProvider,
+    LaunchpadsProvider
   ]
 })
 export class AppModule {}
