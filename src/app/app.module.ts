@@ -6,22 +6,26 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
+import { CompanyComponent } from '../components/company/company';
+import { CoresComponent } from '../components/cores/cores';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CompanyProvider } from '../providers/company/company';
-import { CompanyComponent } from '../components/company/company';
 import { HttpClientModule } from '@angular/common/http';
 import { RocketsProvider } from '../providers/rockets/rockets';
 import { CapsulesProvider } from '../providers/capsules/capsules';
 import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
 import { CoresProvider } from '../providers/cores/cores';
 
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    CompanyComponent
+    CompanyComponent,
+    CoresComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ import { CoresProvider } from '../providers/cores/cores';
     MyApp,
     HomePage,
     ListPage,
-    CompanyComponent
+    CompanyComponent,
+    CoresComponent
   ],
   providers: [
     StatusBar,
