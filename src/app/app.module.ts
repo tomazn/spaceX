@@ -8,6 +8,8 @@ import { ListPage } from '../pages/list/list';
 
 import { CompanyComponent } from '../components/company/company';
 import { CoresComponent } from '../components/cores/cores';
+import { CoresDetailsComponent } from '../components/cores-details/cores-details';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +27,8 @@ import { CoresProvider } from '../providers/cores/cores';
     HomePage,
     ListPage,
     CompanyComponent,
-    CoresComponent
+    CoresComponent,
+    CoresDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { CoresProvider } from '../providers/cores/cores';
     HomePage,
     ListPage,
     CompanyComponent,
-    CoresComponent
+    CoresComponent,
+    CoresDetailsComponent
   ],
   providers: [
     StatusBar,
