@@ -1,0 +1,18 @@
+<ion-header> 
+    <ion-navbar> 
+      <button ion-button menuToggle> 
+        <ion-icon name="menu"></ion-icon> 
+      </button> 
+      <ion-title>Capsules</ion-title> 
+    </ion-navbar> 
+  </ion-header> 
+   
+  <ion-content class="card-background-page"> 
+   
+    <ion-card *ngFor="let capsule of capsulesList"> 
+      <img src="assets/imgs/{{capsule.img}}"/> 
+      <div class="card-title">{{capsule.name}}</div> 
+      <div class="card-subtitle">{{capsule.type}}</div> 
+    </ion-card> 
+   
+  </ion-content>

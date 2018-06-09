@@ -15,13 +15,15 @@ import { RocketsProvider } from '../providers/rockets/rockets';
 import { CapsulesProvider } from '../providers/capsules/capsules';
 import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
 import { CoresProvider } from '../providers/cores/cores';
+import { CapsulesComponent } from '../components/capsules/capsules';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    CompanyComponent
+    CompanyComponent,
+    CapsulesComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { CoresProvider } from '../providers/cores/cores';
     MyApp,
     HomePage,
     ListPage,
-    CompanyComponent
+    CompanyComponent,
+    CapsulesComponent
   ],
   providers: [
     StatusBar,
