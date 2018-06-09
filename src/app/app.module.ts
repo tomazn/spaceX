@@ -16,6 +16,7 @@ import { CapsulesProvider } from '../providers/capsules/capsules';
 import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
 import { CoresProvider } from '../providers/cores/cores';
 import { RocketsComponent } from '../components/rockets/rockets';
+import { RocketsDetailsComponent } from '../components/rockets-details/rockets-details';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RocketsComponent } from '../components/rockets/rockets';
     HomePage,
     ListPage,
     CompanyComponent,
-    RocketsComponent
+    RocketsComponent,
+    RocketsDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { RocketsComponent } from '../components/rockets/rockets';
     HomePage,
     ListPage,
     CompanyComponent,
-    RocketsComponent
+    RocketsComponent,
+    RocketsDetailsComponent
   ],
   providers: [
     StatusBar,

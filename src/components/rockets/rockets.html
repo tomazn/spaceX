@@ -9,7 +9,9 @@
 
 <ion-content class="card-background-page">
 
-  <ion-card *ngFor="let rocket of rocketsList">
+    <ion-spinner *ngIf="loadRockets"></ion-spinner>
+
+  <ion-card *ngFor="let rocket of rocketsList" (click)="navRocketDetails(rocket)">
     <img src="assets/imgs/{{rocket.img}}"/>
     <div class="card-title">{{rocket.name}}</div>
     <div class="card-subtitle">{{rocket.type}}</div>
