@@ -1,0 +1,22 @@
+<ion-header> 
+    <ion-navbar> 
+      <button ion-button menuToggle> 
+        <ion-icon name="menu"></ion-icon> 
+      </button> 
+      <ion-title>Launchpads</ion-title> 
+    </ion-navbar> 
+  </ion-header> 
+   
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let launchpad of launchpadsList">
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/launchpads.jpg">
+          </ion-thumbnail>
+          <h2>{{launchpad.full_name}}</h2>
+          <p>{{launchpad.details}}</p>
+          <button ion-button clear item-end>View</button>
+        </ion-item>
+      </ion-list>
+</ion-content>
