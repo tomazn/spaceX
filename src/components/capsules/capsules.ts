@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CapsulesProvider } from '../../providers/capsules/capsules';
+import { CapsulesDetailsComponent } from '../capsules-details/capsules-details';
+import { NavController } from 'ionic-angular';
 
 /**
  * Generated class for the CapsulesComponent component.
@@ -15,7 +17,7 @@ export class CapsulesComponent {
 
   capsulesList : any[];
 
-  constructor(private CapsulesProvider : CapsulesProvider) {
+  constructor(private CapsulesProvider : CapsulesProvider, private navCtrl: NavController) {
     this.getCapsules();
   }
 
@@ -34,5 +36,9 @@ export class CapsulesComponent {
     for(let capsule of this.capsulesList){
       capsule.img = capsule.id + ".jpg";
     }
+  }
+
+  navCapsuleDetails(Capsule : any): void{  
+    this.navCtrl.push(CapsulesDetailsComponent, Capsule);  
   }
 }

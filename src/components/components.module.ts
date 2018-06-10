@@ -3,13 +3,16 @@ import { CompanyComponent } from './company/company';
 import { CompanyProvider } from '../providers/company/company';
 import { CapsulesComponent } from './capsules/capsules';
 import { CapsulesProvider } from '../providers/capsules/capsules';
+import { CapsulesDetailsComponent } from './capsules-details/capsules-details';
 
 @NgModule({
 	declarations: [CompanyComponent,
-    CapsulesComponent],
+    CapsulesComponent,
+    CapsulesDetailsComponent],
 	imports: [],
 	exports: [CompanyComponent,
-    CapsulesComponent],
+    CapsulesComponent,
+    CapsulesDetailsComponent],
 	providers: [
 		CompanyProvider,
 		CapsulesProvider

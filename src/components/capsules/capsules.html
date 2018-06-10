@@ -9,7 +9,7 @@
    
   <ion-content class="card-background-page"> 
    
-    <ion-card *ngFor="let capsule of capsulesList"> 
+    <ion-card *ngFor="let capsule of capsulesList" (click)="navCapsuleDetails(capsule)"> 
       <img src="assets/imgs/{{capsule.img}}"/> 
       <div class="card-title">{{capsule.name}}</div> 
       <div class="card-subtitle">{{capsule.type}}</div> 
