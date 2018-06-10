@@ -16,15 +16,20 @@ import { LaunchpadsDetailsComponent } from '../launchpads-details/launchpads-det
 export class LaunchpadsComponent {
 
   launchpadsList : any[];
+  loadingLaunchpads : boolean = false;
 
   constructor(private LaunchpadsProvider: LaunchpadsProvider, private navCtrl: NavController) {
     this.getLaunchpads();
   }
 
   getLaunchpads(): void {
+    this.loadingLaunchpads = true;
     this.LaunchpadsProvider.getLaunchpads()
     .then(
-      res => this.launchpadsList = res,
+      res => {
+        this.launchpadsList = res,
+        this.loadingLaunchpads = false;
+      },
       error => console.log(error)
     )
   }

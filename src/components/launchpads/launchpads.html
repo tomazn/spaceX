@@ -9,6 +9,7 @@
    
 
 <ion-content>
+  <ion-spinner *ngIf="loadingLaunchpads"></ion-spinner>
     <ion-list>
         <ion-item *ngFor="let launchpad of launchpadsList">
           <ion-thumbnail item-start>
