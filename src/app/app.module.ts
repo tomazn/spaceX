@@ -16,6 +16,7 @@ import { CapsulesProvider } from '../providers/capsules/capsules';
 import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
 import { CoresProvider } from '../providers/cores/cores';
 import { LaunchpadsComponent } from '../components/launchpads/launchpads';
+import { LaunchpadsDetailsComponent } from '../components/launchpads-details/launchpads-details';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LaunchpadsComponent } from '../components/launchpads/launchpads';
     HomePage,
     ListPage,
     CompanyComponent,
-    LaunchpadsComponent
+    LaunchpadsComponent,
+    LaunchpadsDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { LaunchpadsComponent } from '../components/launchpads/launchpads';
     HomePage,
     ListPage,
     CompanyComponent,
-    LaunchpadsComponent
+    LaunchpadsComponent,
+    LaunchpadsDetailsComponent
   ],
   providers: [
     StatusBar,

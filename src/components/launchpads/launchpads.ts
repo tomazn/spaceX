@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { LaunchpadsProvider } from '../../providers/launchpads/launchpads';
+import { NavController } from 'ionic-angular'; 
+import { LaunchpadsDetailsComponent } from '../launchpads-details/launchpads-details';
 
 /**
  * Generated class for the LaunchpadsComponent component.
@@ -15,7 +17,7 @@ export class LaunchpadsComponent {
 
   launchpadsList : any[];
 
-  constructor(private LaunchpadsProvider: LaunchpadsProvider) {
+  constructor(private LaunchpadsProvider: LaunchpadsProvider, private navCtrl: NavController) {
     this.getLaunchpads();
   }
 
@@ -26,5 +28,9 @@ export class LaunchpadsComponent {
       error => console.log(error)
     )
   }
+
+  navLaunchpadDetails(launchpad : any): void{  
+    this.navCtrl.push(LaunchpadsDetailsComponent, launchpad);  
+  }  
 
 }
