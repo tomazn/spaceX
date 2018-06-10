@@ -8,6 +8,8 @@
   </ion-header> 
    
   <ion-content class="card-background-page"> 
+
+    <ion-spinner *ngIf="loadingCapsule"></ion-spinner>
    
     <ion-card *ngFor="let capsule of capsulesList" (click)="navCapsuleDetails(capsule)"> 
       <img src="assets/imgs/{{capsule.img}}"/> 

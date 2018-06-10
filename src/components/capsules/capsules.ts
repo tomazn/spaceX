@@ -16,17 +16,20 @@ import { NavController } from 'ionic-angular';
 export class CapsulesComponent {
 
   capsulesList : any[];
+  loadingCapsule : boolean = false;
 
   constructor(private CapsulesProvider : CapsulesProvider, private navCtrl: NavController) {
     this.getCapsules();
   }
 
   getCapsules(): void {
+    this.loadingCapsule = true;
     this.CapsulesProvider.getCapsules()
     .then(
       res => {
         this.capsulesList = res,
         this.setImg();
+        this.loadingCapsule = false;
       },
       error => console.log(error)
     )
