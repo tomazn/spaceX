@@ -6,6 +6,9 @@ import { CoresDetailsComponent } from './cores-details/cores-details';
 import { RocketsComponent } from './rockets/rockets';
 import { RocketsProvider } from '../providers/rockets/rockets';
 import { RocketsDetailsComponent } from './rockets-details/rockets-details';
+import { CapsulesComponent } from './capsules/capsules';
+import { CapsulesProvider } from '../providers/capsules/capsules';
+import { CapsulesDetailsComponent } from './capsules-details/capsules-details';
 
 @NgModule({
 	declarations: [CompanyComponent,
@@ -13,15 +16,20 @@ import { RocketsDetailsComponent } from './rockets-details/rockets-details';
     CoresDetailsComponent],
     RocketsComponent,
     RocketsDetailsComponent],
+    CapsulesComponent,
+    CapsulesDetailsComponent],
 	imports: [],
 	exports: [CompanyComponent,
     CoresComponent,
     CoresDetailsComponent],
     RocketsComponent,
     RocketsDetailsComponent],
+    CapsulesComponent,
+    CapsulesDetailsComponent],
 	providers: [
 		CompanyProvider,
 		RocketsProvider
+		CapsulesProvider
 	]
 })
 export class ComponentsModule {}
