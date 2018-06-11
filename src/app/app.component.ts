@@ -29,9 +29,9 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       {title: 'Company', component: CompanyComponent},
-      {title : 'Cores', component: CoresComponent}
-      {title : 'Rockets', component: RocketsComponent}
-      {title : 'Capsules', component: CapsulesComponent}
+      {title : 'Cores', component: CoresComponent},
+      {title : 'Rockets', component: RocketsComponent},
+      {title : 'Capsules', component: CapsulesComponent},
       {title : 'Launchpads', component: LaunchpadsComponent}
     ];
 

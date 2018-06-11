@@ -34,11 +34,11 @@ import { LaunchpadsDetailsComponent } from '../components/launchpads-details/lau
     ListPage,
     CompanyComponent,
     RocketsComponent,
-    RocketsDetailsComponent
+    RocketsDetailsComponent,
     CoresComponent,
-    CoresDetailsComponent
+    CoresDetailsComponent,
     CapsulesComponent,
-    CapsulesDetailsComponent
+    CapsulesDetailsComponent,
     LaunchpadsComponent,
     LaunchpadsDetailsComponent
   ],
@@ -56,11 +56,11 @@ import { LaunchpadsDetailsComponent } from '../components/launchpads-details/lau
     ListPage,
     CompanyComponent,
     CoresComponent,
-    CoresDetailsComponent
+    CoresDetailsComponent,
     RocketsComponent,
-    RocketsDetailsComponent
+    RocketsDetailsComponent,
     CapsulesComponent,
-    CapsulesDetailsComponent
+    CapsulesDetailsComponent,
     LaunchpadsComponent,
     LaunchpadsDetailsComponent
   ],

@@ -15,26 +15,26 @@ import { LaunchpadsDetailsComponent } from './launchpads-details/launchpads-deta
 @NgModule({
 	declarations: [CompanyComponent,
     CoresComponent,
-    CoresDetailsComponent],
+    CoresDetailsComponent,
     RocketsComponent,
-    RocketsDetailsComponent],
+    RocketsDetailsComponent,
     CapsulesComponent,
-    CapsulesDetailsComponent],
+    CapsulesDetailsComponent,
     LaunchpadsComponent,
     LaunchpadsDetailsComponent],
 	imports: [],
 	exports: [CompanyComponent,
     CoresComponent,
-    CoresDetailsComponent],
+    CoresDetailsComponent,
     RocketsComponent,
-    RocketsDetailsComponent],
+    RocketsDetailsComponent,
     CapsulesComponent,
-    CapsulesDetailsComponent],
+    CapsulesDetailsComponent,
     LaunchpadsComponent,
     LaunchpadsDetailsComponent],
 	providers: [
 		CompanyProvider,
-		RocketsProvider
+		RocketsProvider,
 		CapsulesProvider
 	]
 })
