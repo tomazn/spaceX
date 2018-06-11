@@ -14,7 +14,14 @@ export class LaunchpadsProvider {
     console.log('Hello LaunchpadsProvider Provider');
   }
 
-  getLaunchpads(launchpadName): Promise<any> {
+  getLaunchpads(): Promise<any> {
+    return this.http.get('https://api.spacexdata.com/v2/launchpads')
+      .toPromise()
+      .then()
+      .catch(this.handleError);
+  }
+
+  getLaunchpad(launchpadName): Promise<any> {
     return this.http.get('https://api.spacexdata.com/v2/launchpads' + launchpadName)
       .toPromise()
       .then()

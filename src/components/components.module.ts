@@ -9,6 +9,8 @@ import { RocketsDetailsComponent } from './rockets-details/rockets-details';
 import { CapsulesComponent } from './capsules/capsules';
 import { CapsulesProvider } from '../providers/capsules/capsules';
 import { CapsulesDetailsComponent } from './capsules-details/capsules-details';
+import { LaunchpadsComponent } from './launchpads/launchpads';
+import { LaunchpadsDetailsComponent } from './launchpads-details/launchpads-details';
 
 @NgModule({
 	declarations: [CompanyComponent,
@@ -18,6 +20,8 @@ import { CapsulesDetailsComponent } from './capsules-details/capsules-details';
     RocketsDetailsComponent],
     CapsulesComponent,
     CapsulesDetailsComponent],
+    LaunchpadsComponent,
+    LaunchpadsDetailsComponent],
 	imports: [],
 	exports: [CompanyComponent,
     CoresComponent,
@@ -26,6 +30,8 @@ import { CapsulesDetailsComponent } from './capsules-details/capsules-details';
     RocketsDetailsComponent],
     CapsulesComponent,
     CapsulesDetailsComponent],
+    LaunchpadsComponent,
+    LaunchpadsDetailsComponent],
 	providers: [
 		CompanyProvider,
 		RocketsProvider

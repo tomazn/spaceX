@@ -9,6 +9,7 @@ import { CompanyComponent } from '../components/company/company';
 import { CoresComponent } from '../components/cores/cores';
 import { RocketsComponent } from '../components/rockets/rockets';
 import { CapsulesComponent } from '../components/capsules/capsules';
+import { LaunchpadsComponent } from '../components/launchpads/launchpads';
 
 @Component({
   templateUrl: 'app.html'
@@ -31,6 +32,7 @@ export class MyApp {
       {title : 'Cores', component: CoresComponent}
       {title : 'Rockets', component: RocketsComponent}
       {title : 'Capsules', component: CapsulesComponent}
+      {title : 'Launchpads', component: LaunchpadsComponent}
     ];
 
   }

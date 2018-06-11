@@ -23,6 +23,8 @@ import { RocketsComponent } from '../components/rockets/rockets';
 import { RocketsDetailsComponent } from '../components/rockets-details/rockets-details';
 import { CapsulesComponent } from '../components/capsules/capsules';
 import { CapsulesDetailsComponent } from '../components/capsules-details/capsules-details';
+import { LaunchpadsComponent } from '../components/launchpads/launchpads';
+import { LaunchpadsDetailsComponent } from '../components/launchpads-details/launchpads-details';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { CapsulesDetailsComponent } from '../components/capsules-details/capsule
     CoresDetailsComponent
     CapsulesComponent,
     CapsulesDetailsComponent
+    LaunchpadsComponent,
+    LaunchpadsDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +61,8 @@ import { CapsulesDetailsComponent } from '../components/capsules-details/capsule
     RocketsDetailsComponent
     CapsulesComponent,
     CapsulesDetailsComponent
+    LaunchpadsComponent,
+    LaunchpadsDetailsComponent
   ],
   providers: [
     StatusBar,
