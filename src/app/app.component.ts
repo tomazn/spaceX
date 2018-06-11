@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { CompanyComponent } from '../components/company/company';
 import { CoresComponent } from '../components/cores/cores';
+import { RocketsComponent } from '../components/rockets/rockets';
 
 @Component({
   templateUrl: 'app.html'
@@ -27,6 +28,7 @@ export class MyApp {
       { title: 'List', component: ListPage },
       {title: 'Company', component: CompanyComponent},
       {title : 'Cores', component: CoresComponent}
+      {title : 'Rockets', component: RocketsComponent}
     ];
 
   }

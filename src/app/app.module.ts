@@ -19,6 +19,8 @@ import { RocketsProvider } from '../providers/rockets/rockets';
 import { CapsulesProvider } from '../providers/capsules/capsules';
 import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
 import { CoresProvider } from '../providers/cores/cores';
+import { RocketsComponent } from '../components/rockets/rockets';
+import { RocketsDetailsComponent } from '../components/rockets-details/rockets-details';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { CoresProvider } from '../providers/cores/cores';
     HomePage,
     ListPage,
     CompanyComponent,
+    RocketsComponent,
+    RocketsDetailsComponent
     CoresComponent,
     CoresDetailsComponent
   ],
@@ -45,6 +49,8 @@ import { CoresProvider } from '../providers/cores/cores';
     CompanyComponent,
     CoresComponent,
     CoresDetailsComponent
+    RocketsComponent,
+    RocketsDetailsComponent
   ],
   providers: [
     StatusBar,
