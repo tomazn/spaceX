@@ -14,6 +14,32 @@
       <p>
         {{rocket.description}}
       </p>
+      <p>Active : {{rocket.active}}</p>
+      <p>
+        First flight: {{rocket.first_flight}}
+      </p>
+      <p>
+        From : {{rocket.country}}
+      </p>
+      <p>
+        Height : {{rocket.height.meters}}m
+      </p>
+      <p>
+        Mass : {{rocket.mass.kg}}kg
+      </p>
+      <p>
+        Diameter : {{rocket.diameter.meters}}
+      </p>
+      <hr>
+      <h2>First Stage</h2>
+      <p>Reusable : {{rocket.first_stage.reusable}}</p>
+      <p>Engines : {{rocket.first_stage.engines}}</p>
+      <p>Fuel Amount Tons : {{rocket.first_stage.fuel_amount_tons}}</p>
+      <hr>
+      <h2>Second Stage</h2>
+      <p>Reusable : {{rocket.second_stage.reusable}}</p>
+      <p>Engines : {{rocket.second_stage.engines}}</p>
+      <p>Fuel Amount Tons : {{rocket.second_stage.fuel_amount_tons}}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>
