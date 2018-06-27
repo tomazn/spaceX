@@ -7,34 +7,72 @@
   <ion-content> 
     <ion-card> 
       <img src="assets/imgs/{{capsule.img}}"/> 
-      <ion-card-content> 
-        <ion-card-title> 
-         {{capsule.name}} 
+      <ion-card-content text-center="">
+        <ion-card-title>
+            <button ion-button color="danger" clear>{{capsule.name}} </button>
           </ion-card-title>
-          <p>Active : {{capsule.active}}</p>
-          <p>Capsule : {{capsule.type}}</p>
-          <p>Crew capacity : {{capsule.crew_capacity}}</p>
-          <p>Orbit duration : {{capsule.orbit_duration_yr}} year(s)</p>
+          <button *ngIf="capsule.active" ion-button color="secondary">Active</button>
+          <button *ngIf="!capsule.active" ion-button color="danger">Unactive</button>
+          <button ion-button outline>{{capsule.type}}</button>
+          <div>
+              <ion-item>
+                  Capacity <ion-badge item-end>{{capsule.crew_capacity}}</ion-badge>
+              </ion-item>
+              <ion-item>
+                  Orbit duration <ion-badge item-end>{{capsule.orbit_duration_yr}} year(s)</ion-badge>
+              </ion-item>
+          </div>
       </ion-card-content> 
     </ion-card>
       <ion-card>
-          <ion-card-content>
-              <h2>Heat Shield</h2>
-              <p>Material : {{capsule.heat_shield.material}}</p>
-              <p>Size : {{capsule.heat_shield.size_meters}}m</p>
-              <p>Degrees : {{capsule.heat_shield.temp_degrees}}°</p>
-              <p>with {{capsule.heat_shield.dev_partner}}</p>
+          <ion-card-content text-center="">
+              <ion-card-title>
+                  <button ion-button color="danger" clear>Heat Shield</button>
+              </ion-card-title>
+              <button ion-button icon-start>
+                  <ion-icon name="build"></ion-icon>
+                  {{capsule.heat_shield.material}}
+              </button>
+              <button ion-button icon-start>
+                  <ion-icon name="resize"></ion-icon>
+                  {{capsule.heat_shield.size_meters}}m
+              </button>
+              <button ion-button icon-start>
+                  <ion-icon name="bonfire"></ion-icon>
+                  {{capsule.heat_shield.temp_degrees}}°
+              </button>
+              <button ion-button color="danger" round>
+                  with {{capsule.heat_shield.dev_partner}}
+              </button>
           </ion-card-content>
       </ion-card>
       <ion-card>
-          <ion-card-content>
-              <h2>Thrusters</h2>
-              <div *ngFor="let thruster of capsule.thrusters">
-                  <p>Type : {{ thruster.type }}</p>
-                  <p>Pods : {{ thruster.pods }}</p>
-                  <p>Fuel(s) : {{ thruster.fuel_1 }} - {{ thruster.fuel_2 }}</p>
-                  <p>Thrust : {{ thruster.thrust.kN }} kN - {{ thruster.thrust.lbf }} kbf</p>
-              </div>
+          <ion-card-content text-center="">
+              <button ion-button color="danger" clear>Thrusters</button>
+              <ion-row *ngFor="let thruster of capsule.thrusters">
+                  <ion-item>
+                      <ion-icon name="information" item-start large ></ion-icon>
+                      <h2>Type of Thruster</h2>
+                      <p>{{ thruster.type }}</p>
+                  </ion-item>
+                  <ion-item>
+                      <ion-icon name="nuclear" item-start large ></ion-icon>
+                      <h2>Number of Pods</h2>
+                      <p>{{ thruster.pods }}</p>
+                  </ion-item>
+                  <ion-item>
+                      <ion-icon name="leaf" item-start large ></ion-icon>
+                      <h2>Fuels used</h2>
+                      <p>{{ thruster.fuel_1 }} </p>
+                      <p>{{ thruster.fuel_2 }} </p>
+                  </ion-item>
+                  <ion-item>
+                      <ion-icon name="jet" item-start large ></ion-icon>
+                      <h2>Thrusts</h2>
+                      <p>{{ thruster.thrust.kN }} kN</p>
+                      <p>{{ thruster.thrust.lbf }} kbf</p>
+                  </ion-item>
+              </ion-row>
           </ion-card-content>
       </ion-card>
   </ion-content>
