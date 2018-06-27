@@ -29,7 +29,12 @@
       <ion-card>
           <ion-card-content>
               <h2>Thrusters</h2>
-              <p>Type : {{capsule.thrusters.type}}</p>
+              <div *ngFor="let thruster of capsule.thrusters">
+                  <p>Type : {{ thruster.type }}</p>
+                  <p>Pods : {{ thruster.pods }}</p>
+                  <p>Fuel(s) : {{ thruster.fuel_1 }} - {{ thruster.fuel_2 }}</p>
+                  <p>Thrust : {{ thruster.thrust.kN }} kN - {{ thruster.thrust.lbf }} kbf</p>
+              </div>
           </ion-card-content>
       </ion-card>
   </ion-content>
