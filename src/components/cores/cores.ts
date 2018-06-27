@@ -16,6 +16,7 @@ import { NavController } from 'ionic-angular';
 export class CoresComponent {
 
   private coresList: any[];
+  private loadCores: boolean = false;
 
   constructor(private coresPrivder: CoresProvider, public navCtrl: NavController) {
     let query = "";
@@ -23,9 +24,13 @@ export class CoresComponent {
   }
 
   getRockets(query): void{
+    this.loadCores = true;
     this.coresPrivder.getCores(query)
     .then(
-      res => this.coresList = res,
+      res => {
+        this.coresList = res;
+        this.loadCores = false;
+      },
       error => console.log(error)
     )
   }
