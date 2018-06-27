@@ -10,7 +10,26 @@
       <ion-card-content> 
         <ion-card-title> 
          {{capsule.name}} 
-          </ion-card-title> 
+          </ion-card-title>
+          <p>Active : {{capsule.active}}</p>
+          <p>Capsule : {{capsule.type}}</p>
+          <p>Crew capacity : {{capsule.crew_capacity}}</p>
+          <p>Orbit duration : {{capsule.orbit_duration_yr}} year(s)</p>
       </ion-card-content> 
-    </ion-card> 
+    </ion-card>
+      <ion-card>
+          <ion-card-content>
+              <h2>Heat Shield</h2>
+              <p>Material : {{capsule.heat_shield.material}}</p>
+              <p>Size : {{capsule.heat_shield.size_meters}}m</p>
+              <p>Degrees : {{capsule.heat_shield.temp_degrees}}°</p>
+              <p>with {{capsule.heat_shield.dev_partner}}</p>
+          </ion-card-content>
+      </ion-card>
+      <ion-card>
+          <ion-card-content>
+              <h2>Thrusters</h2>
+              <p>Type : {{capsule.thrusters.type}}</p>
+          </ion-card-content>
+      </ion-card>
   </ion-content>
