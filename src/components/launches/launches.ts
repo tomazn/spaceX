@@ -14,15 +14,18 @@ import { LaunchesProvider } from '../../providers/launches/launches';
 export class LaunchesComponent {
 
   launches: any[];
+  loadLaunches : boolean = false;
 
   constructor(private launchesProvider: LaunchesProvider) {
     this.getLaunches();
   }
 
   getLaunches(): void {
+    this.loadLaunches = true;
       this.launchesProvider.getLaunches()
       .then(res => {
           this.launches = res;
+          this.loadLaunches = false;
       },
     error => console.log(error));
   }
