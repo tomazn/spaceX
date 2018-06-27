@@ -18,6 +18,7 @@ import { CoresProvider } from '../providers/cores/cores';
 import { LaunchesProvider } from '../providers/launches/launches';
 
 import { LaunchesComponent } from '../components/launches/launches';
+import { LaunchesDetailsComponent } from '../components/launches-details/launches-details';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LaunchesComponent } from '../components/launches/launches';
     HomePage,
     ListPage,
     CompanyComponent,
-    LaunchesComponent
+    LaunchesComponent,
+    LaunchesDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { LaunchesComponent } from '../components/launches/launches';
     HomePage,
     ListPage,
     CompanyComponent,
-    LaunchesComponent
+    LaunchesComponent,
+    LaunchesDetailsComponent
   ],
   providers: [
     StatusBar,

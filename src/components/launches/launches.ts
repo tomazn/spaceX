@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { LaunchesProvider } from '../../providers/launches/launches';
+import { LaunchesDetailsComponent } from '../launches-details/launches-details';
+import { NavController } from 'ionic-angular';
 
 /**
  * Generated class for the LaunchesComponent component.
@@ -16,7 +18,7 @@ export class LaunchesComponent {
   launches: any[];
   loadLaunches : boolean = false;
 
-  constructor(private launchesProvider: LaunchesProvider) {
+  constructor(private launchesProvider: LaunchesProvider, private navCtrl: NavController) {
     this.getLaunches();
   }
 
@@ -30,5 +32,7 @@ export class LaunchesComponent {
     error => console.log(error));
   }
 
-
+  navLaunchDetails(Launch : any): void{   
+    this.navCtrl.push(LaunchesDetailsComponent, Launch);   
+  } 
 }

@@ -10,9 +10,8 @@
 <ion-content>
 
     <ion-spinner *ngIf="loadLaunches"></ion-spinner>
-
     <ion-list *ngIf="launches">
-        <ion-item *ngFor="let launch of launches">
+        <ion-item *ngFor="let launch of launches" (click)="navLaunchDetails(launch)">
           <ion-avatar item-start>
             <img [src]="launch.links.mission_patch_small">
           </ion-avatar>
