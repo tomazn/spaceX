@@ -17,12 +17,15 @@ import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
 import { CoresProvider } from '../providers/cores/cores';
 import { LaunchesProvider } from '../providers/launches/launches';
 
+import { LaunchesComponent } from '../components/launches/launches';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    CompanyComponent
+    CompanyComponent,
+    LaunchesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { LaunchesProvider } from '../providers/launches/launches';
     MyApp,
     HomePage,
     ListPage,
-    CompanyComponent
+    CompanyComponent,
+    LaunchesComponent
   ],
   providers: [
     StatusBar,
