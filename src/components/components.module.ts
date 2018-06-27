@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CompanyComponent } from './company/company';
 import { CompanyProvider } from '../providers/company/company';
+import { LaunchesComponent } from './launches/launches';
+import { LaunchesDetailsComponent } from './launches-details/launches-details';
+
 import { CoresComponent } from './cores/cores';
 import { CoresDetailsComponent } from './cores-details/cores-details';
 import { RocketsComponent } from './rockets/rockets';
@@ -21,7 +24,9 @@ import { LaunchpadsDetailsComponent } from './launchpads-details/launchpads-deta
     CapsulesComponent,
     CapsulesDetailsComponent,
     LaunchpadsComponent,
-    LaunchpadsDetailsComponent],
+    LaunchpadsDetailsComponent,
+    LaunchesComponent,
+    LaunchesDetailsComponent],
 	imports: [],
 	exports: [CompanyComponent,
     CoresComponent,
@@ -31,7 +36,9 @@ import { LaunchpadsDetailsComponent } from './launchpads-details/launchpads-deta
     CapsulesComponent,
     CapsulesDetailsComponent,
     LaunchpadsComponent,
-    LaunchpadsDetailsComponent],
+    LaunchpadsDetailsComponent,
+    LaunchesComponent,
+    LaunchesDetailsComponent],
 	providers: [
 		CompanyProvider,
 		RocketsProvider,

@@ -19,6 +19,10 @@ import { RocketsProvider } from '../providers/rockets/rockets';
 import { CapsulesProvider } from '../providers/capsules/capsules';
 import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
 import { CoresProvider } from '../providers/cores/cores';
+import { LaunchesProvider } from '../providers/launches/launches';
+
+import { LaunchesComponent } from '../components/launches/launches';
+import { LaunchesDetailsComponent } from '../components/launches-details/launches-details';
 import { RocketsComponent } from '../components/rockets/rockets';
 import { RocketsDetailsComponent } from '../components/rockets-details/rockets-details';
 import { CapsulesComponent } from '../components/capsules/capsules';
@@ -33,6 +37,8 @@ import { LaunchpadsDetailsComponent } from '../components/launchpads-details/lau
     HomePage,
     ListPage,
     CompanyComponent,
+    LaunchesComponent,
+    LaunchesDetailsComponent,
     RocketsComponent,
     RocketsDetailsComponent,
     CoresComponent,
@@ -55,6 +61,8 @@ import { LaunchpadsDetailsComponent } from '../components/launchpads-details/lau
     HomePage,
     ListPage,
     CompanyComponent,
+    LaunchesComponent,
+    LaunchesDetailsComponent,
     CoresComponent,
     CoresDetailsComponent,
     RocketsComponent,
@@ -72,7 +80,8 @@ import { LaunchpadsDetailsComponent } from '../components/launchpads-details/lau
     RocketsProvider,
     CapsulesProvider,
     LaunchpadsProvider,
-    CoresProvider
+    CoresProvider,
+    LaunchesProvider
   ]
 })
 export class AppModule {}
