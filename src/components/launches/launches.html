@@ -4,7 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Launches</ion-title>
-    <button class="open-modal" (click)="openModalFilter()">
+    <button *ngIf="!loadLaunches" class="open-modal" (click)="openModalFilter()">
         <ion-icon name="funnel"></ion-icon>
     </button>
   </ion-navbar>

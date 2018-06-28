@@ -8,5 +8,13 @@
   </ion-header>
 
 <ion-content padding>
-  My filters here
+    <ion-item>
+        <ion-label>Only successful Launches</ion-label>
+        <ion-toggle [(ngModel)]="successLaunches"></ion-toggle>
+      </ion-item>
+<ion-item>
+  <button ion-button *ngFor="let rocket of rocketsFilter" [outline]="rocket != selectedRocketsFilter" (click)="selectRocket(rocket)">{{rocket}}</button>
+</ion-item>
+
+  <button ion-button class="submitFilter">Filter</button>
 </ion-content>

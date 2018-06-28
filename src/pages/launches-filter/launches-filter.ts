@@ -15,15 +15,28 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class LaunchesFilterPage {
 
+  rocketsFilter: String[];
+  selectedRocketsFilter: String;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
+  initRocketFilter(): void{
+    this.rocketsFilter = this.navParams.get('rocketsFilter');
+    this.selectedRocketsFilter = this.navParams.get('rocketsFilter')[0];
+    console.log(this.rocketsFilter);
+    console.log(this.selectedRocketsFilter);
+  }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LaunchesFilterPage');
+    this.initRocketFilter();
   }
 
   closeModalFilter(): void {
     this.viewCtrl.dismiss();
   }
 
+  selectRocket(rocket: String): void{
+    this.selectedRocketsFilter = rocket;
+  }
 }

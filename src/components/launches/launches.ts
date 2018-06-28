@@ -21,6 +21,7 @@ export class LaunchesComponent {
   launchesCopy: any[];
   loadLaunches : boolean = false;
   launchesSearch : string;
+  rocketsFilter : String[] = ["all"];
 
   constructor(private launchesProvider: LaunchesProvider, private navCtrl: NavController, public modalCtrl: ModalController) {
     this.getLaunches();
@@ -31,6 +32,7 @@ export class LaunchesComponent {
       this.launchesProvider.getLaunches()
       .then(res => {
           this.launches = res;
+          this.getRocketsFilter();
           this.launchesCopy = res;
           this.loadLaunches = false;
       },
@@ -53,7 +55,15 @@ export class LaunchesComponent {
   }
 
   openModalFilter(): void {
-    const modal = this.modalCtrl.create(LaunchesFilterPage);
+    const modal = this.modalCtrl.create(LaunchesFilterPage, {rocketsFilter: this.rocketsFilter});
     modal.present();
   }
+
+  getRocketsFilter(): void{
+    for(let launch of this.launches){
+        if(this.rocketsFilter.indexOf(launch.rocket.rocket_name) < 0){
+          this.rocketsFilter.push(launch.rocket.rocket_name);
+        }
+  }
+}
 }
