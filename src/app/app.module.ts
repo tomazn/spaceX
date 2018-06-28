@@ -6,10 +6,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
+import { CompanyComponent } from '../components/company/company';
+import { CoresComponent } from '../components/cores/cores';
+import { CoresDetailsComponent } from '../components/cores-details/cores-details';
+
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CompanyProvider } from '../providers/company/company';
-import { CompanyComponent } from '../components/company/company';
 import { HttpClientModule } from '@angular/common/http';
 import { RocketsProvider } from '../providers/rockets/rockets';
 import { CapsulesProvider } from '../providers/capsules/capsules';
@@ -19,7 +23,14 @@ import { LaunchesProvider } from '../providers/launches/launches';
 
 import { LaunchesComponent } from '../components/launches/launches';
 import { LaunchesDetailsComponent } from '../components/launches-details/launches-details';
+import { RocketsComponent } from '../components/rockets/rockets';
+import { RocketsDetailsComponent } from '../components/rockets-details/rockets-details';
+import { CapsulesComponent } from '../components/capsules/capsules';
+import { CapsulesDetailsComponent } from '../components/capsules-details/capsules-details';
+import { LaunchpadsComponent } from '../components/launchpads/launchpads';
+import { LaunchpadsDetailsComponent } from '../components/launchpads-details/launchpads-details';
 import { LaunchesFilterPage } from '../pages/launches-filter/launches-filter';
+
 
 @NgModule({
   declarations: [
@@ -28,8 +39,7 @@ import { LaunchesFilterPage } from '../pages/launches-filter/launches-filter';
     ListPage,
     CompanyComponent,
     LaunchesComponent,
-    LaunchesDetailsComponent,
-    LaunchesFilterPage
+    LaunchesDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,8 +55,7 @@ import { LaunchesFilterPage } from '../pages/launches-filter/launches-filter';
     ListPage,
     CompanyComponent,
     LaunchesComponent,
-    LaunchesDetailsComponent,
-    LaunchesFilterPage
+    LaunchesDetailsComponent
   ],
   providers: [
     StatusBar,
