@@ -1,0 +1,13 @@
+page-launches-filter {
+    .close-modal{
+        width: 60px;
+        right: 5px;
+        position: absolute;
+    }
+
+    .toolbar-content{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { LaunchesProvider } from '../../providers/launches/launches';
 import { LaunchesDetailsComponent } from '../launches-details/launches-details';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
+import { LaunchesFilterPage } from '../../pages/launches-filter/launches-filter';
+
 
 /**
  * Generated class for the LaunchesComponent component.
@@ -16,9 +18,11 @@ import { NavController } from 'ionic-angular';
 export class LaunchesComponent {
 
   launches: any[];
+  launchesCopy: any[];
   loadLaunches : boolean = false;
+  launchesSearch : string;
 
-  constructor(private launchesProvider: LaunchesProvider, private navCtrl: NavController) {
+  constructor(private launchesProvider: LaunchesProvider, private navCtrl: NavController, public modalCtrl: ModalController) {
     this.getLaunches();
   }
 
@@ -27,6 +31,7 @@ export class LaunchesComponent {
       this.launchesProvider.getLaunches()
       .then(res => {
           this.launches = res;
+          this.launchesCopy = res;
           this.loadLaunches = false;
       },
     error => console.log(error));
@@ -35,4 +40,20 @@ export class LaunchesComponent {
   navLaunchDetails(Launch : any): void{   
     this.navCtrl.push(LaunchesDetailsComponent, Launch);   
   } 
+
+  onInput(event: Event): void{
+  this.launches = this.launchesCopy;
+  let filteredLaunches = [];
+    for(let launch of this.launches){
+      if(launch.mission_name.toLowerCase().includes(this.launchesSearch.toLowerCase())){
+        filteredLaunches.push(launch);
+      }
+    }
+  this.launches = filteredLaunches;
+  }
+
+  openModalFilter(): void {
+    const modal = this.modalCtrl.create(LaunchesFilterPage);
+    modal.present();
+  }
 }
