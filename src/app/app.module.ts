@@ -39,7 +39,14 @@ import { LaunchesFilterPage } from '../pages/launches-filter/launches-filter';
     ListPage,
     CompanyComponent,
     LaunchesComponent,
-    LaunchesDetailsComponent
+    LaunchesDetailsComponent,
+    RocketsComponent,
+    RocketsDetailsComponent,
+    CapsulesComponent,
+    CapsulesDetailsComponent,
+    LaunchpadsComponent,
+    LaunchpadsDetailsComponent,
+    LaunchesFilterPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +62,14 @@ import { LaunchesFilterPage } from '../pages/launches-filter/launches-filter';
     ListPage,
     CompanyComponent,
     LaunchesComponent,
-    LaunchesDetailsComponent
+    LaunchesDetailsComponent,
+    RocketsComponent,
+    RocketsDetailsComponent,
+    CapsulesComponent,
+    CapsulesDetailsComponent,
+    LaunchpadsComponent,
+    LaunchpadsDetailsComponent,
+    LaunchesFilterPage
   ],
   providers: [
     StatusBar,

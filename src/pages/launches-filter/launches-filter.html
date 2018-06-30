@@ -8,13 +8,20 @@
   </ion-header>
 
 <ion-content padding>
-    <ion-item>
+
         <ion-label>Only successful Launches</ion-label>
         <ion-toggle [(ngModel)]="successLaunches"></ion-toggle>
-      </ion-item>
-<ion-item>
+      
+
   <button ion-button *ngFor="let rocket of rocketsFilter" [outline]="rocket != selectedRocketsFilter" (click)="selectRocket(rocket)">{{rocket}}</button>
+
+  <ion-item *ngIf="launchesDate">
+      <ion-label>Launch year</ion-label>
+      <ion-select [(ngModel)]="selectedLaunchDateFilter">
+        <ion-option *ngFor="let launcheDate of launchesDate" [value]="launcheDate">{{launcheDate}}</ion-option>
+      </ion-select>
 </ion-item>
 
-  <button ion-button class="submitFilter">Filter</button>
+
+  <button ion-button class="submitFilter" (click)="submitFilterFn()">Filter</button>
 </ion-content>

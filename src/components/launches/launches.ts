@@ -22,6 +22,13 @@ export class LaunchesComponent {
   loadLaunches : boolean = false;
   launchesSearch : string;
   rocketsFilter : String[] = ["all"];
+  launchesDate: String[] = ["all"];
+
+
+  //Filters
+  selectedRocketsFilter: String;;
+  selectedLaunchDateFilter: String;
+  successLaunches: boolean;
 
   constructor(private launchesProvider: LaunchesProvider, private navCtrl: NavController, public modalCtrl: ModalController) {
     this.getLaunches();
@@ -33,6 +40,7 @@ export class LaunchesComponent {
       .then(res => {
           this.launches = res;
           this.getRocketsFilter();
+          this.getRangeDate();
           this.launchesCopy = res;
           this.loadLaunches = false;
       },
@@ -55,7 +63,16 @@ export class LaunchesComponent {
   }
 
   openModalFilter(): void {
-    const modal = this.modalCtrl.create(LaunchesFilterPage, {rocketsFilter: this.rocketsFilter});
+    const modal = this.modalCtrl.create(LaunchesFilterPage, {rocketsFilter: this.rocketsFilter, launchesDate: this.launchesDate});
+    modal.onDidDismiss(data => {
+      if(!data){
+        return false;
+      }
+      this.selectedRocketsFilter = data.selectedRocketsFilter;
+      this.selectedLaunchDateFilter = data.selectedLaunchDateFilter;
+      this.successLaunches = data.successLaunches;
+    });
+    
     modal.present();
   }
 
@@ -66,4 +83,12 @@ export class LaunchesComponent {
         }
   }
 }
+
+  getRangeDate(): void{
+    for(let launch of this.launches){
+        if(this.launchesDate.indexOf(launch.launch_year) < 0){
+          this.launchesDate.push(launch.launch_year);
+        }
+    }
+  }
 }

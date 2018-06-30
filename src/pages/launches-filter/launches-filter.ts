@@ -17,26 +17,44 @@ export class LaunchesFilterPage {
 
   rocketsFilter: String[];
   selectedRocketsFilter: String;
+  launchesDate: {
+    lower : number,
+    upper: number
+  }
+  selectedLaunchDateFilter: String;
+  successLaunches: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
-  initRocketFilter(): void{
+  initFilter(): void{
+    this.successLaunches = false;
+    this.launchesDate = this.navParams.get('launchesDate');
     this.rocketsFilter = this.navParams.get('rocketsFilter');
     this.selectedRocketsFilter = this.navParams.get('rocketsFilter')[0];
-    console.log(this.rocketsFilter);
-    console.log(this.selectedRocketsFilter);
+    this.selectedLaunchDateFilter = this.navParams.get('launchesDate')[0];
   }
 
-  ionViewDidLoad() {
-    this.initRocketFilter();
+  ionViewDidEnter(){
+    this.initFilter();
   }
 
   closeModalFilter(): void {
-    this.viewCtrl.dismiss();
+    this.selectedRocketsFilter = null;
+    this.selectedLaunchDateFilter = null;
+    this.successLaunches = null;
+    this.viewCtrl.dismiss(null);
   }
 
   selectRocket(rocket: String): void{
     this.selectedRocketsFilter = rocket;
+  }
+
+  submitFilterFn(): void{
+    this.viewCtrl.dismiss({
+      selectedRocketsFilter: this.selectedRocketsFilter,
+      selectedLaunchDateFilter: this.selectedLaunchDateFilter,
+      successLaunches: this.successLaunches
+    });
   }
 }
