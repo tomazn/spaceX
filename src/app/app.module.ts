@@ -15,6 +15,7 @@ import { RocketsProvider } from '../providers/rockets/rockets';
 import { CapsulesProvider } from '../providers/capsules/capsules';
 import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
 import { CoresProvider } from '../providers/cores/cores';
+import { LaunchesProvider } from '../providers/launches/launches';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { CoresProvider } from '../providers/cores/cores';
     RocketsProvider,
     CapsulesProvider,
     LaunchpadsProvider,
-    CoresProvider
+    CoresProvider,
+    LaunchesProvider
   ]
 })
 export class AppModule {}
