@@ -27,12 +27,11 @@ export class LaunchesFilterPage {
 
   initFilter(): void{
     this.SuccessLanches = ["all","true","false"];
-    this.selectedSuccessLaunch = this.SuccessLanches[0];
     this.launchesDate = this.navParams.get('launchesDate');
     this.rocketsFilter = this.navParams.get('rocketsFilter');
-    this.selectedRocketsFilter = this.navParams.get('rocketsFilter')[0];
-    this.selectedLaunchDateFilter = this.navParams.get('launchesDate')[0];
-    console.log(this.SuccessLanches);
+    this.selectedRocketsFilter = this.navParams.get('selectedRocketsFilter') ? this.navParams.get('selectedRocketsFilter') : this.navParams.get('rocketsFilter')[0];
+    this.selectedLaunchDateFilter = this.navParams.get('selectedLaunchDateFilter') ? this.navParams.get('selectedLaunchDateFilter') : this.navParams.get('launchesDate')[0];
+    this.selectedSuccessLaunch = this.navParams.get('selectedSuccessLaunch') ? this.navParams.get('selectedSuccessLaunch') : this.SuccessLanches[0];
   }
 
   ionViewDidEnter(){

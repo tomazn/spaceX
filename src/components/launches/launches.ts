@@ -26,7 +26,7 @@ export class LaunchesComponent {
 
 
   //Filters
-  selectedRocketsFilter: String;;
+  selectedRocketsFilter: String;
   selectedLaunchDateFilter: String;
   selectedSuccessLaunch: String;
 
@@ -63,7 +63,14 @@ export class LaunchesComponent {
   }
 
   openModalFilter(): void {
-    const modal = this.modalCtrl.create(LaunchesFilterPage, {rocketsFilter: this.rocketsFilter, launchesDate: this.launchesDate});
+    const modal = this.modalCtrl.create(LaunchesFilterPage, {
+      rocketsFilter: this.rocketsFilter, 
+      launchesDate: this.launchesDate,
+      //Selected value
+      selectedRocketsFilter: this.selectedRocketsFilter,
+      selectedLaunchDateFilter: this.selectedLaunchDateFilter,
+      selectedSuccessLaunch: this.selectedSuccessLaunch
+    });
     modal.onDidDismiss(data => {
       if(!data){
         return false;
