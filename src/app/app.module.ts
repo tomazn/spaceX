@@ -31,6 +31,7 @@ import { LaunchpadsComponent } from '../components/launchpads/launchpads';
 import { LaunchpadsDetailsComponent } from '../components/launchpads-details/launchpads-details';
 import { LaunchesFilterPage } from '../pages/launches-filter/launches-filter';
 
+import {PipesModule} from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { LaunchesFilterPage } from '../pages/launches-filter/launches-filter';
     IonicModule.forRoot(MyApp, {
       preloadModules: true
     }),
-    HttpClientModule
+    HttpClientModule,
+    PipesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -9,12 +9,15 @@
 
 <ion-content padding>
 
-        <ion-label>Only successful Launches</ion-label>
-        <ion-toggle [(ngModel)]="successLaunches"></ion-toggle>
-      
+       <div>
+          <ion-label>Successful Launches</ion-label>
+        <button ion-button *ngFor="let SuccessLanche of SuccessLanches" [outline]="SuccessLanche != selectedSuccessLaunch" (click)="selectedSuccessLaunchFn(SuccessLanche)">{{SuccessLanche}}</button>
+       </div>
 
-  <button ion-button *ngFor="let rocket of rocketsFilter" [outline]="rocket != selectedRocketsFilter" (click)="selectRocket(rocket)">{{rocket}}</button>
-
+<div>
+    <ion-label>Rockets</ion-label>
+    <button ion-button *ngFor="let rocket of rocketsFilter" [outline]="rocket != selectedRocketsFilter" (click)="selectRocket(rocket)">{{rocket}}</button>
+</div>
   <ion-item *ngIf="launchesDate">
       <ion-label>Launch year</ion-label>
       <ion-select [(ngModel)]="selectedLaunchDateFilter">

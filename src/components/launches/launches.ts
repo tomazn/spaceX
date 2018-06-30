@@ -28,7 +28,7 @@ export class LaunchesComponent {
   //Filters
   selectedRocketsFilter: String;;
   selectedLaunchDateFilter: String;
-  successLaunches: boolean;
+  selectedSuccessLaunch: String;
 
   constructor(private launchesProvider: LaunchesProvider, private navCtrl: NavController, public modalCtrl: ModalController) {
     this.getLaunches();
@@ -70,7 +70,7 @@ export class LaunchesComponent {
       }
       this.selectedRocketsFilter = data.selectedRocketsFilter;
       this.selectedLaunchDateFilter = data.selectedLaunchDateFilter;
-      this.successLaunches = data.successLaunches;
+      this.selectedSuccessLaunch = data.selectedSuccessLaunch;
     });
     
     modal.present();

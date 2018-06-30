@@ -17,22 +17,22 @@ export class LaunchesFilterPage {
 
   rocketsFilter: String[];
   selectedRocketsFilter: String;
-  launchesDate: {
-    lower : number,
-    upper: number
-  }
+  launchesDate: String[];
   selectedLaunchDateFilter: String;
-  successLaunches: boolean;
+  SuccessLanches: String[];
+  selectedSuccessLaunch: String;;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
   }
 
   initFilter(): void{
-    this.successLaunches = false;
+    this.SuccessLanches = ["all","true","false"];
+    this.selectedSuccessLaunch = this.SuccessLanches[0];
     this.launchesDate = this.navParams.get('launchesDate');
     this.rocketsFilter = this.navParams.get('rocketsFilter');
     this.selectedRocketsFilter = this.navParams.get('rocketsFilter')[0];
     this.selectedLaunchDateFilter = this.navParams.get('launchesDate')[0];
+    console.log(this.SuccessLanches);
   }
 
   ionViewDidEnter(){
@@ -42,7 +42,7 @@ export class LaunchesFilterPage {
   closeModalFilter(): void {
     this.selectedRocketsFilter = null;
     this.selectedLaunchDateFilter = null;
-    this.successLaunches = null;
+    this.selectedSuccessLaunch = "";
     this.viewCtrl.dismiss(null);
   }
 
@@ -50,11 +50,15 @@ export class LaunchesFilterPage {
     this.selectedRocketsFilter = rocket;
   }
 
+  selectedSuccessLaunchFn(SuccessLaunch: String): void{
+    this.selectedSuccessLaunch = SuccessLaunch;
+  }
+
   submitFilterFn(): void{
     this.viewCtrl.dismiss({
       selectedRocketsFilter: this.selectedRocketsFilter,
       selectedLaunchDateFilter: this.selectedLaunchDateFilter,
-      successLaunches: this.successLaunches
+      selectedSuccessLaunch: this.selectedSuccessLaunch
     });
   }
 }
