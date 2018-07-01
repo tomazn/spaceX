@@ -6,6 +6,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
+import {HomePageComponent} from '../components/home-page/home-page';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CompanyProvider } from '../providers/company/company';
@@ -16,13 +18,18 @@ import { CapsulesProvider } from '../providers/capsules/capsules';
 import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
 import { CoresProvider } from '../providers/cores/cores';
 import { LaunchesProvider } from '../providers/launches/launches';
+import { HomeLatestPage } from '../pages/home-latest/home-latest';
+import { HomeNextPage } from '../pages/home-next/home-next';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    CompanyComponent
+    CompanyComponent,
+    HomePageComponent,
+    HomeLatestPage,
+    HomeNextPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,10 @@ import { LaunchesProvider } from '../providers/launches/launches';
     MyApp,
     HomePage,
     ListPage,
-    CompanyComponent
+    CompanyComponent,
+    HomePageComponent,
+    HomeLatestPage,
+    HomeNextPage
   ],
   providers: [
     StatusBar,
