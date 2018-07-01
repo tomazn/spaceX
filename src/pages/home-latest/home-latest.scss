@@ -1,3 +1,24 @@
 page-home-latest {
+.latest img{
+    padding: 20px;
+}
 
+.title{
+    text-align: center;
+    padding-top: 25px;
+    font-weight: bold;
+}
+
+.link-col{
+
+    a{
+        text-decoration: none;
+        color: red;
+        text-transform: uppercase;
+    }
+
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #ccc;
+    background-color: #fbfbfb;
+}
 }

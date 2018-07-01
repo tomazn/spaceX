@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {LaunchesProvider} from '../../providers/launches/launches';
 
 /**
  * Generated class for the HomeLatestPage page.
@@ -15,11 +16,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomeLatestPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public LaunchesProvider: LaunchesProvider) {
   }
 
+  latestLaunch: any;
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomeLatestPage');
+    this.getLatestLaunch();
+  }
+
+  getLatestLaunch(): void{
+    this.LaunchesProvider.getLaunch("latest")
+    .then(res => {
+        this.latestLaunch = res;
+        console.log(this.latestLaunch);
+    },
+  error => console.log(error));
   }
 
 }
