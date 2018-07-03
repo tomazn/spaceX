@@ -7,6 +7,12 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { CompanyComponent } from '../components/company/company';
 
+import { LaunchesComponent } from '../components/launches/launches';
+import { CoresComponent } from '../components/cores/cores';
+import { RocketsComponent } from '../components/rockets/rockets';
+import { CapsulesComponent } from '../components/capsules/capsules';
+import { LaunchpadsComponent } from '../components/launchpads/launchpads';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -24,7 +30,12 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
-      {title: 'Company', component: CompanyComponent}
+      {title: 'Company', component: CompanyComponent},
+      {title: 'Launches', component: LaunchesComponent},
+      {title : 'Cores', component: CoresComponent},
+      {title : 'Rockets', component: RocketsComponent},
+      {title : 'Capsules', component: CapsulesComponent},
+      {title : 'Launchpads', component: LaunchpadsComponent}
     ];
 
   }

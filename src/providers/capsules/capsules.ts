@@ -14,7 +14,14 @@ export class CapsulesProvider {
     console.log('Hello CapsulesProvider Provider');
   }
 
-  getCapsules(capsuleName): Promise<any> {
+  getCapsules(): Promise<any> {
+    return this.http.get('https://api.spacexdata.com/v2/capsules')
+      .toPromise()
+      .then()
+      .catch(this.handleError);
+  }
+
+  getCapsule(capsuleName): Promise<any> {
     return this.http.get('https://api.spacexdata.com/v2/capsules' + capsuleName)
       .toPromise()
       .then()

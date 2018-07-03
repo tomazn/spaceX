@@ -1,12 +1,18 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>
+        <img src="assets/imgs/logo-spacex-white.png"/>
+    </ion-title>
   </ion-navbar>
+  <ion-toolbar color="dark">
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+
+<ion-content padding class="card-background-page">
 <home-page></home-page>
-</ion-content>
+
