@@ -2,27 +2,27 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
-  Generated class for the CapsulesProvider provider.
+  Generated class for the LaunchesProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
 @Injectable()
-export class CapsulesProvider {
+export class LaunchesProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello CapsulesProvider Provider');
+    console.log('Hello LaunchesProvider Provider');
   }
 
-  getCapsules(): Promise<any> {
-    return this.http.get('https://api.spacexdata.com/v2/capsules')
+  getLaunches(): Promise<any> {
+    return this.http.get('https://api.spacexdata.com/v2/launches')
       .toPromise()
       .then()
       .catch(this.handleError);
   }
 
-  getCapsule(capsuleName): Promise<any> {
-    return this.http.get('https://api.spacexdata.com/v2/capsules' + capsuleName)
+  getLaunche(query): Promise<any> {
+    return this.http.get('https://api.spacexdata.com/v2/launches?' + query)
       .toPromise()
       .then()
       .catch(this.handleError);
