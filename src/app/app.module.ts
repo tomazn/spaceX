@@ -6,10 +6,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
+import {HomePageComponent} from '../components/home-page/home-page';
 import { CompanyComponent } from '../components/company/company';
 import { CoresComponent } from '../components/cores/cores';
 import { CoresDetailsComponent } from '../components/cores-details/cores-details';
-
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,6 +20,8 @@ import { CapsulesProvider } from '../providers/capsules/capsules';
 import { LaunchpadsProvider } from '../providers/launchpads/launchpads';
 import { CoresProvider } from '../providers/cores/cores';
 import { LaunchesProvider } from '../providers/launches/launches';
+import { HomeLatestPage } from '../pages/home-latest/home-latest';
+import { HomeNextPage } from '../pages/home-next/home-next';
 
 import { LaunchesComponent } from '../components/launches/launches';
 import { LaunchesDetailsComponent } from '../components/launches-details/launches-details';
@@ -37,6 +39,9 @@ import { LaunchpadsDetailsComponent } from '../components/launchpads-details/lau
     HomePage,
     ListPage,
     CompanyComponent,
+    HomePageComponent,
+    HomeLatestPage,
+    HomeNextPage,
     LaunchesComponent,
     LaunchesDetailsComponent,
     RocketsComponent,
@@ -61,6 +66,9 @@ import { LaunchpadsDetailsComponent } from '../components/launchpads-details/lau
     HomePage,
     ListPage,
     CompanyComponent,
+    HomePageComponent,
+    HomeLatestPage,
+    HomeNextPage,
     LaunchesComponent,
     LaunchesDetailsComponent,
     CoresComponent,

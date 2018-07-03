@@ -21,8 +21,8 @@ export class LaunchesProvider {
       .catch(this.handleError);
   }
 
-  getLaunche(query): Promise<any> {
-    return this.http.get('https://api.spacexdata.com/v2/launches?' + query)
+  getLaunch(query): Promise<any> {
+    return this.http.get('https://api.spacexdata.com/v2/launches/' + query)
       .toPromise()
       .then()
       .catch(this.handleError);

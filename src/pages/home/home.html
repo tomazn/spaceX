@@ -12,22 +12,7 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content padding class="card-background-page">
+<home-page></home-page>
 
-  <h3>Welcome to SpaceX</h3>
-
-  <p>The countdown</p>
-
-  <ion-slides pager>
-
-    <ion-slide *ngFor="let p of pages">
-      <ion-card>
-        <img src="assets/imgs/SpaceX.png"/>
-        <div class="card-title">{{p.title}}</div>
-        <div class="card-subtitle">41 Listings</div>
-      </ion-card>
-    </ion-slide>
-  
-  </ion-slides>
-
-</ion-content>
