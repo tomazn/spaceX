@@ -1,0 +1,55 @@
+<ion-header> 
+  <ion-navbar> 
+    <ion-title>{{rocket.name}}</ion-title> 
+  </ion-navbar> 
+</ion-header> 
+
+<ion-content>
+    <ion-card-content>
+      <ion-slides pager>
+        <ion-slide>
+          <img src="assets/imgs/{{rocket.img}}"/>
+          <h2>
+            {{rocket.name}}
+          </h2>
+          <p>
+            {{rocket.description}}
+          </p>
+        </ion-slide>
+        <ion-slide>
+          <h2>Informations</h2>
+          <button *ngIf="rocket.active" ion-button color="secondary" outline>Active</button>
+          <button *ngIf="!rocket.active" ion-button color="danger" outline>Uactive</button>
+          <button ion-button icon-start small>{{rocket.first_flight}}</button>
+          <span>
+            <ion-icon name="flag" large></ion-icon> {{rocket.country}}
+          </span>
+          <p>
+            Height : {{rocket.height.meters}}m
+          </p>
+          <p>
+            Mass : {{rocket.mass.kg}}kg
+          </p>
+          <p>
+            Diameter : {{rocket.diameter.meters}}
+          </p>
+        </ion-slide>
+        <ion-slide>
+          <h2>First Stage</h2>
+          <p>Reusable : {{rocket.first_stage.reusable}}</p>
+          <p>Engines : {{rocket.first_stage.engines}}</p>
+          <p>Fuel Amount Tons : {{rocket.first_stage.fuel_amount_tons}}</p>
+          <h2>Second Stage</h2>
+          <p>Reusable : {{rocket.second_stage.reusable}}</p>
+          <p>Engines : {{rocket.second_stage.engines}}</p>
+          <p>Fuel Amount Tons : {{rocket.second_stage.fuel_amount_tons}}</p>
+        </ion-slide>
+        <ion-slide>
+          <h2>Engine(s)</h2>
+          <p>Number : {{rocket.engines.number}} </p>
+          <p>Type : {{rocket.engines.type}}</p>
+          <p>Propellants : {{rocket.engines.propellant_1}}, {{rocket.engines.propellant_2}}</p>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-content>
+</ion-content>

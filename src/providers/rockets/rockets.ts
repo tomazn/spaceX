@@ -14,7 +14,14 @@ export class RocketsProvider {
     console.log('Hello RocketsProvider Provider');
   }
 
-  getRockets(rocketName): Promise<any> {
+  getRockets(): Promise<any> {
+    return this.http.get('https://api.spacexdata.com/v2/rockets')
+      .toPromise()
+      .then()
+      .catch(this.handleError);
+  }
+
+  getRocket(rocketName): Promise<any> {
     return this.http.get('https://api.spacexdata.com/v2/rockets' + rocketName)
       .toPromise()
       .then()
