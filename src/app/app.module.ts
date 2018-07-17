@@ -52,7 +52,9 @@ import {PipesModule} from '../pipes/pipes.module';
     CapsulesDetailsComponent,
     LaunchpadsComponent,
     LaunchpadsDetailsComponent,
-    LaunchesFilterPage
+    LaunchesFilterPage,
+    CoresComponent,
+    CoresDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,9 @@ import {PipesModule} from '../pipes/pipes.module';
     CapsulesDetailsComponent,
     LaunchpadsComponent,
     LaunchpadsDetailsComponent,
-    LaunchesFilterPage
+    LaunchesFilterPage,
+    CoresComponent,
+    CoresDetailsComponent
   ],
   providers: [
     StatusBar,
