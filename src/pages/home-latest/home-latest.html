@@ -28,7 +28,7 @@
         <ion-item (click)="navigateRocket(latestLaunch.rocket)">
           <ion-label>{{latestLaunch.rocket.rocket_name}} <ion-icon float-right name="rocket"></ion-icon></ion-label>
         </ion-item>
-        <ion-item>
+        <ion-item (click)="navigateLaunchpad(latestLaunch.launch_site)">
           <ion-label>{{latestLaunch.launch_site.site_name}} <ion-icon float-right name="locate"></ion-icon></ion-label>
         </ion-item>
       </ion-item-group>

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {LaunchesProvider} from '../../providers/launches/launches';
 import { RocketsProvider } from '../../providers/rockets/rockets';
 import { RocketsDetailsComponent } from '../../components/rockets-details/rockets-details';
+import { LaunchpadsProvider } from '../../providers/launchpads/launchpads';
+import {LaunchesProvider} from '../../providers/launches/launches';
+import {LaunchpadsDetailsComponent} from '../../components/launchpads-details/launchpads-details';
 
 /**
  * Generated class for the HomeNextPage page.
@@ -18,7 +20,8 @@ import { RocketsDetailsComponent } from '../../components/rockets-details/rocket
 })
 export class HomeNextPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private LaunchesProvider: LaunchesProvider, private RocketsProvider: RocketsProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private LaunchpadsProvider: LaunchpadsProvider,
+     private RocketsProvider: RocketsProvider, private LaunchesProvider: LaunchesProvider) {
   }
 
   nextLaunch: any;
@@ -68,6 +71,16 @@ export class HomeNextPage {
         error => console.log(error)
       )
 
+  }
+
+  navigateLaunchpad(launchpad: any): void{
+    this.LaunchpadsProvider.getLaunchpad(launchpad.site_id)
+    .then(
+      res =>{
+        this.navCtrl.push(LaunchpadsDetailsComponent, res);
+      },
+      error => console.log(error)
+    )
   }
 
 }
