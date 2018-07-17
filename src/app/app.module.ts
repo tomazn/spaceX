@@ -10,7 +10,6 @@ import {HomePageComponent} from '../components/home-page/home-page';
 import { CompanyComponent } from '../components/company/company';
 import { CoresComponent } from '../components/cores/cores';
 import { CoresDetailsComponent } from '../components/cores-details/cores-details';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CompanyProvider } from '../providers/company/company';
@@ -35,6 +34,16 @@ import { LaunchesFilterPage } from '../pages/launches-filter/launches-filter';
 
 import {PipesModule} from '../pipes/pipes.module';
 
+import { LaunchesComponent } from '../components/launches/launches';
+import { LaunchesDetailsComponent } from '../components/launches-details/launches-details';
+import { RocketsComponent } from '../components/rockets/rockets';
+import { RocketsDetailsComponent } from '../components/rockets-details/rockets-details';
+import { CapsulesComponent } from '../components/capsules/capsules';
+import { CapsulesDetailsComponent } from '../components/capsules-details/capsules-details';
+import { LaunchpadsComponent } from '../components/launchpads/launchpads';
+import { LaunchpadsDetailsComponent } from '../components/launchpads-details/launchpads-details';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -54,7 +63,9 @@ import {PipesModule} from '../pipes/pipes.module';
     LaunchpadsDetailsComponent,
     LaunchesFilterPage,
     CoresComponent,
-    CoresDetailsComponent
+    CoresDetailsComponent,
+    CapsulesComponent,
+    CapsulesDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -75,15 +86,15 @@ import {PipesModule} from '../pipes/pipes.module';
     HomeNextPage,
     LaunchesComponent,
     LaunchesDetailsComponent,
+    CoresComponent,
+    CoresDetailsComponent,
     RocketsComponent,
     RocketsDetailsComponent,
     CapsulesComponent,
     CapsulesDetailsComponent,
     LaunchpadsComponent,
     LaunchpadsDetailsComponent,
-    LaunchesFilterPage,
-    CoresComponent,
-    CoresDetailsComponent
+    LaunchesFilterPage
   ],
   providers: [
     StatusBar,

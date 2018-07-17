@@ -4,7 +4,6 @@ import { LaunchesDetailsComponent } from '../launches-details/launches-details';
 import { NavController, ModalController } from 'ionic-angular';
 import { LaunchesFilterPage } from '../../pages/launches-filter/launches-filter';
 
-
 /**
  * Generated class for the LaunchesComponent component.
  *
@@ -98,4 +97,3 @@ export class LaunchesComponent {
         }
     }
   }
-}

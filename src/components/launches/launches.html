@@ -18,9 +18,7 @@
   (ionCancel)="onCancel($event)">
 </ion-searchbar>
     <ion-list *ngIf="launches">
-
         <ion-item *ngIf="launches.length <= 0">No launches</ion-item>
-
         <ion-item *ngFor="let launch of launches | LaunchesPipe:selectedSuccessLaunch:selectedRocketsFilter:selectedLaunchDateFilter" (click)="navLaunchDetails(launch)">
           <ion-avatar item-start>
             <img [src]="launch.links.mission_patch_small">
