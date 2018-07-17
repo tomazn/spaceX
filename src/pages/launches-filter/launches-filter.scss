@@ -1,0 +1,23 @@
+page-launches-filter {
+    .close-modal{
+        width: 60px;
+        right: 5px;
+        position: absolute;
+    }
+
+    .toolbar-content{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .submitFilter{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    text-align: center;
+    margin: 0;
+    border-radius: 0;
+    }
+}
