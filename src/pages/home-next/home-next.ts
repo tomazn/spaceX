@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {LaunchesProvider} from '../../providers/launches/launches';
+import { RocketsProvider } from '../../providers/rockets/rockets';
+import { RocketsDetailsComponent } from '../../components/rockets-details/rockets-details';
 
 /**
  * Generated class for the HomeNextPage page.
@@ -16,7 +18,7 @@ import {LaunchesProvider} from '../../providers/launches/launches';
 })
 export class HomeNextPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private LaunchesProvider: LaunchesProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private LaunchesProvider: LaunchesProvider, private RocketsProvider: RocketsProvider) {
   }
 
   nextLaunch: any;
@@ -45,7 +47,7 @@ export class HomeNextPage {
     timestamp /= 1000;
   setInterval(() => {
       timestamp--;
-      
+
       this.countdown = {
         days: Math.floor(timestamp / (24 * 60 * 60)),
         hours: Math.floor(timestamp / (60 * 60)) % 24,
@@ -54,5 +56,18 @@ export class HomeNextPage {
       }
   }, 1000);
     }
+
+  navigateRocket(rocket: any): void{
+
+    this.RocketsProvider.getRocket(rocket.rocket_id)
+      .then(
+        res => {
+          res.img = res.id + ".jpg";
+          this.navCtrl.push(RocketsDetailsComponent, res);
+        },
+        error => console.log(error)
+      )
+
+  }
 
 }

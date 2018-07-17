@@ -30,7 +30,7 @@
           {{nextLaunch.details}}
         </p>
         <ion-item-group class="specs">
-          <ion-item (click)="test()">
+          <ion-item (click)="navigateRocket(nextLaunch.rocket)">
               <ion-label>{{nextLaunch.rocket.rocket_name}} <ion-icon float-right name="rocket"></ion-icon></ion-label>
           </ion-item>
           <ion-item>

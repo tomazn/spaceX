@@ -22,7 +22,7 @@ export class RocketsProvider {
   }
 
   getRocket(rocketName): Promise<any> {
-    return this.http.get('https://api.spacexdata.com/v2/rockets' + rocketName)
+    return this.http.get('https://api.spacexdata.com/v2/rockets/' + rocketName)
       .toPromise()
       .then()
       .catch(this.handleError);
