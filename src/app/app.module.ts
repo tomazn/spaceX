@@ -29,7 +29,9 @@ import { CapsulesComponent } from '../components/capsules/capsules';
 import { CapsulesDetailsComponent } from '../components/capsules-details/capsules-details';
 import { LaunchpadsComponent } from '../components/launchpads/launchpads';
 import { LaunchpadsDetailsComponent } from '../components/launchpads-details/launchpads-details';
+import { LaunchesFilterPage } from '../pages/launches-filter/launches-filter';
 
+import {PipesModule} from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -41,19 +43,19 @@ import { LaunchpadsDetailsComponent } from '../components/launchpads-details/lau
     LaunchesDetailsComponent,
     RocketsComponent,
     RocketsDetailsComponent,
-    CoresComponent,
-    CoresDetailsComponent,
     CapsulesComponent,
     CapsulesDetailsComponent,
     LaunchpadsComponent,
-    LaunchpadsDetailsComponent
+    LaunchpadsDetailsComponent,
+    LaunchesFilterPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {
       preloadModules: true
     }),
-    HttpClientModule
+    HttpClientModule,
+    PipesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -63,14 +65,13 @@ import { LaunchpadsDetailsComponent } from '../components/launchpads-details/lau
     CompanyComponent,
     LaunchesComponent,
     LaunchesDetailsComponent,
-    CoresComponent,
-    CoresDetailsComponent,
     RocketsComponent,
     RocketsDetailsComponent,
     CapsulesComponent,
     CapsulesDetailsComponent,
     LaunchpadsComponent,
-    LaunchpadsDetailsComponent
+    LaunchpadsDetailsComponent,
+    LaunchesFilterPage
   ],
   providers: [
     StatusBar,
