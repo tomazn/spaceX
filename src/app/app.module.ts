@@ -34,15 +34,6 @@ import { LaunchesFilterPage } from '../pages/launches-filter/launches-filter';
 
 import {PipesModule} from '../pipes/pipes.module';
 
-import { LaunchesComponent } from '../components/launches/launches';
-import { LaunchesDetailsComponent } from '../components/launches-details/launches-details';
-import { RocketsComponent } from '../components/rockets/rockets';
-import { RocketsDetailsComponent } from '../components/rockets-details/rockets-details';
-import { CapsulesComponent } from '../components/capsules/capsules';
-import { CapsulesDetailsComponent } from '../components/capsules-details/capsules-details';
-import { LaunchpadsComponent } from '../components/launchpads/launchpads';
-import { LaunchpadsDetailsComponent } from '../components/launchpads-details/launchpads-details';
-
 
 @NgModule({
   declarations: [
