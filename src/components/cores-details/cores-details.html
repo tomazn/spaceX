@@ -7,51 +7,71 @@
 
 <ion-content>
     <ion-card *ngIf="core">
-        <ion-card-header>
-            core_serial: {{core.core_serial}}
+        <ion-card-header text-center>
+            <button ion-button color="dark">{{core.core_serial}}</button>
           </ion-card-header>
 
          <ion-card-content>
-            <p>
-                block: {{core.block}}
-              </p>
-              <p>
-                status: {{core.status}}
-              </p>
-              <p>
-                original_launch: {{core.original_launch}}
-              </p>
+             <ion-item *ngIf="core.block">
+                 <span>Block</span> <ion-badge item-end>{{core.block}}</ion-badge>
+             </ion-item>
+             <ion-item>
+                 <span>Status</span> <ion-badge item-end>{{core.status}}</ion-badge>
+             </ion-item>
+              <ion-item text-center>
+                <p>
+                    Original Launch
+                </p>
+                  <button ion-button>{{core.original_launch}}</button>
+              </ion-item>
             
             
-                core_mission :
-                <p *ngFor="let core_mission of core.missions">
-                  {{core_mission}}
-                </p> 
+               <ion-item text-center>
+                   <p>
+                       Missions
+                   </p>
+                   <button ion-button color="danger" outline *ngFor="let core_mission of core.missions">
+                       {{core_mission}}
+                   </button>
+               </ion-item>
             
             
-              <p>
-                  rtls_attempt: {{core.rtls_attempt}}
-              </p>
+              <ion-item>
+                  Real Time LS Attempt
+                  <ion-badge color="secondary" item-end *ngIf="core.rtls_attempt">Success</ion-badge>
+                  <ion-badge color="danger" item-end *ngIf="!core.rtls_attempt">Fail</ion-badge>
+              </ion-item>
             
-              <p>
-                  rtls_landings: {{core.rtls_landings}}
-              </p>
+              <ion-item>
+                  Real Time LS Landings
+                  <ion-badge item-end>{{core.rtls_landings}}</ion-badge>
+              </ion-item>
             
-              <p>
-                  asds_attempt: {{core.asds_attempt}}
-              </p>
+              <ion-item>
+                  Autonomous spaceport DS
+                  <ion-badge color="secondary" item-end *ngIf="core.asds_attempt">Success</ion-badge>
+                  <ion-badge color="danger" item-end *ngIf="!core.asds_attempt">Fail</ion-badge>
+              </ion-item>
             
-              <p>
-                  asds_landings: {{core.asds_landings}}
-              </p>
+              <ion-item>
+                  ASDS Landings
+                  <ion-badge item-end>{{core.asds_landings}}</ion-badge>
+              </ion-item>
             
-              <p>
-                  water_landing: {{core.water_landing}}
-              </p>
+              <ion-item>
+                  Water landing
+                  <ion-badge color="secondary" item-end *ngIf="core.water_attempt">Success</ion-badge>
+                  <ion-badge color="danger" item-end *ngIf="!core.water_attempt">Fail</ion-badge>
+              </ion-item>
             
-              <p>
-                  details: {{core.details}}
-              </p>
+              <ion-card text-center *ngIf="core.details">
+                  <ion-card-header color="secondary">
+                      More info
+                  </ion-card-header>
+                  <ion-card-content>
+                      {{core.details}}
+                  </ion-card-content>
+              </ion-card>
          </ion-card-content> 
     </ion-card>
 </ion-content>

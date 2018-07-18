@@ -10,4 +10,11 @@ launches {
         align-items: center;
     }
 
+    ion-slides{
+        height: auto;
+    }
+
+    ion-slide{
+        overflow: auto;
+    }
 }

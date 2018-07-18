@@ -13,7 +13,7 @@
           </ion-card-title>
           <button *ngIf="capsule.active" ion-button color="secondary">Active</button>
           <button *ngIf="!capsule.active" ion-button color="danger">Unactive</button>
-          <button ion-button outline>{{capsule.type}}</button>
+          <button ion-button color="secondary" outline>{{capsule.type}}</button>
           <div>
               <ion-item>
                   Capacity <ion-badge item-end>{{capsule.crew_capacity}}</ion-badge>
@@ -52,23 +52,23 @@
               <ion-row *ngFor="let thruster of capsule.thrusters">
                   <ion-item>
                       <ion-icon name="information" item-start large ></ion-icon>
-                      <h2>Type of Thruster</h2>
+                      <h2 style="color:white;">Type of Thruster</h2>
                       <p>{{ thruster.type }}</p>
                   </ion-item>
                   <ion-item>
                       <ion-icon name="nuclear" item-start large ></ion-icon>
-                      <h2>Number of Pods</h2>
+                      <h2 style="color:white;">Number of Pods</h2>
                       <p>{{ thruster.pods }}</p>
                   </ion-item>
                   <ion-item>
                       <ion-icon name="leaf" item-start large ></ion-icon>
-                      <h2>Fuels used</h2>
+                      <h2 style="color:white;">Fuels used</h2>
                       <p>{{ thruster.fuel_1 }} </p>
                       <p>{{ thruster.fuel_2 }} </p>
                   </ion-item>
                   <ion-item>
                       <ion-icon name="jet" item-start large ></ion-icon>
-                      <h2>Thrusts</h2>
+                      <h2 style="color:white;">Thrusts</h2>
                       <p>{{ thruster.thrust.kN }} kN</p>
                       <p>{{ thruster.thrust.lbf }} kbf</p>
                   </ion-item>
