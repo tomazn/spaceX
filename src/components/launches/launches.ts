@@ -22,7 +22,12 @@ export class LaunchesComponent {
   launchesSearch: string;
   rocketsFilter: String[] = ["all"];
   launchesDate: String[] = ["all"];
-
+  stats : {
+    total: number,
+    success: number,
+    reuseCore: number,
+    reuseCapsule: number
+  }
 
   //Filters
   selectedRocketsFilter: String;
@@ -40,6 +45,7 @@ export class LaunchesComponent {
           this.launches = res;
           this.getRocketsFilter();
           this.getRangeDate();
+          this.getStats();
           this.launchesCopy = res;
           this.loadLaunches = false;
         },
@@ -95,6 +101,33 @@ export class LaunchesComponent {
       if (this.launchesDate.indexOf(launch.launch_year) < 0) {
         this.launchesDate.push(launch.launch_year);
       }
+    }
+  }
+
+  getStats(): void{
+
+    let total = this.launches.length;
+    let success = 0;
+    let reuseCore = 0;
+    let reuseCapsule = 0;
+
+    for(let launch of this.launches){
+        if(launch.launch_success){
+          success++;
+        }
+        if(launch.reuse.core){
+          reuseCore++;
+        }
+        if(launch.reuse.capsule){
+          reuseCapsule++;
+        }
+    }
+
+    this.stats = {
+      total: total,
+      success: success,
+      reuseCore: reuseCore,
+      reuseCapsule: reuseCapsule
     }
   }
 }
