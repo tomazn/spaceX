@@ -13,7 +13,7 @@
           </ion-card-title>
           <button *ngIf="capsule.active" ion-button color="secondary">Active</button>
           <button *ngIf="!capsule.active" ion-button color="danger">Unactive</button>
-          <button ion-button outline>{{capsule.type}}</button>
+          <button ion-button color="secondary" outline>{{capsule.type}}</button>
           <div>
               <ion-item>
                   Capacity <ion-badge item-end>{{capsule.crew_capacity}}</ion-badge>

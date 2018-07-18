@@ -1,129 +1,109 @@
 <ion-header>
     <ion-navbar color="primary">
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      <ion-title>Company info</ion-title>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Company info</ion-title>
     </ion-navbar>
-  </ion-header>
+</ion-header>
 
-  <ion-content>
-<ion-card>
+<ion-content>
+    <ion-card>
         <img src="assets/imgs/spacex.png"/>
         <ion-spinner *ngIf="loadCompany"></ion-spinner>
         <ion-card-content *ngIf="company && !loadCompany" color="light">
-          <ion-card-title text-center color="secondary">
-              {{company.name}}
+            <ion-card-title text-center color="secondary">
+                {{company.name}}
             </ion-card-title>
-         
-            <h2 text-center ion-text color="light"><ion-badge color="primary">Person</ion-badge></h2>
+
+            <ion-card-title text-center color="light">Person</ion-card-title>
+            <ion-item>Founder
+                <ion-badge color="secondary" item-end>{{company.founder}}</ion-badge>
+            </ion-item>
+            <ion-item>CEO
+                <ion-badge color="secondary" item-end>{{company.ceo}}</ion-badge>
+            </ion-item>
+            <ion-item>CTO
+                <ion-badge color="secondary" item-end>{{company.cto}}</ion-badge>
+            </ion-item>
+            <ion-item>COO
+                <ion-badge item-end>{{company.coo}}</ion-badge>
+            </ion-item>
+            <ion-item>CTO Propulsion
+                <ion-badge item-end>{{company.cto_propulsion}}</ion-badge>
+            </ion-item>
+            <ion-item>Employees
+                <ion-badge item-end>{{company.employees}}</ion-badge>
+            </ion-item>
+
+            <ion-card-title text-center color="light">Numbers</ion-card-title>
+
             <ion-grid class="person">
-                    <ion-row>
-                      <ion-col>
-                            <ion-icon name="person"></ion-icon>
-                            <u>founder</u>
-                            {{company.founder}}
-                      </ion-col>
-                      <ion-col>
-                            <ion-icon name="person"></ion-icon>
-                            <u>ceo</u>
-                            {{company.ceo}}
-                      </ion-col>
-                      <ion-col>
-                            <ion-icon name="person"></ion-icon>
-                            <u>cto</u>
-                            {{company.cto}}
-                      </ion-col>
-                    </ion-row>
-                    <ion-row>
-                            <ion-col>
-                                  <ion-icon name="person"></ion-icon>
-                                  <u>coo</u>
-                                  {{company.coo}}
-                            </ion-col>
-                            <ion-col>
-                                  <ion-icon name="person"></ion-icon>
-                                  <u>cto propulsion</u>
-                                  {{company.cto_propulsion}}
-                            </ion-col>
-                            <ion-col>
-                                    <ion-icon name="people"></ion-icon>
-                                  <u>employees</u>
-                                  {{company.employees}}
-                            </ion-col>
-                          </ion-row>
-                  </ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-icon name="calendar"></ion-icon>
+                        <p style="color: lightseagreen;">Founded</p>
+                        {{company.founded}}
+                    </ion-col>
+                    <ion-col>
+                        <ion-icon name="car"></ion-icon>
+                        <p style="color: lightseagreen;">Vehicles</p>
+                        {{company.vehicles}}
+                    </ion-col>
+                    <ion-col>
+                        <ion-icon name="rocket"></ion-icon>
+                        <p style="color: lightseagreen;">Launch Sites</p>
+                        {{company.launch_sites}}
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-icon name="rocket"></ion-icon>
+                        <p style="color: lightseagreen;">Test Sites</p>
+                        {{company.test_sites}}
+                    </ion-col>
+                    <ion-col>
+                        <ion-icon name="cash"></ion-icon>
+                        <p style="color: lightseagreen;">Valuation</p>
+                        {{company.valuation}}
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-                  <h2 text-center ion-text color="light"><ion-badge color="primary">Number</ion-badge></h2>
+            <ion-card-title text-center color="light">Headquarters</ion-card-title>
 
-                  <ion-grid class="person">
-                        <ion-row>
-                          <ion-col>
-                                <ion-icon name="calendar"></ion-icon>
-                                <u>founded</u>
-                                {{company.founded}}
-                          </ion-col>
-                          <ion-col>
-                                <ion-icon name="car"></ion-icon>
-                                <u>vehicles</u>
-                                {{company.vehicles}}
-                          </ion-col>
-                          <ion-col>
-                                <ion-icon name="rocket"></ion-icon>
-                                <u>launch_sites</u>
-                                {{company.launch_sites}}
-                          </ion-col>
-                          </ion-row>
-                          <ion-row>
-                              <ion-col>
-                                    <ion-icon name="rocket"></ion-icon>
-                                    <u>test_sites</u>
-                                    {{company.test_sites}}
-                              </ion-col>
-                              <ion-col>
-                                    <ion-icon name="cash"></ion-icon>
-                                    <u>valuation</u>
-                                    {{company.valuation}}
-                              </ion-col>
-                          </ion-row>
-                          </ion-grid>
+            <ion-grid class="person" *ngIf="company.headquarters">
+                <ion-row>
+                    <ion-col>
+                        <ion-icon name="navigate"></ion-icon>
+                        <p style="color: lightseagreen;">Headquarters Address</p>
+                        {{company.headquarters.address}}
+                    </ion-col>
+                    <ion-col>
+                        <ion-icon name="navigate"></ion-icon>
+                        <p style="color: lightseagreen;">Headquarters address</p>
+                        {{company.headquarters.address}}
+                    </ion-col>
+                    <ion-col>
+                        <ion-icon name="navigate"></ion-icon>
+                        <p style="color: lightseagreen;">Headquarters City</p>
+                        {{company.headquarters.city}}
+                    </ion-col>
+                    <ion-col>
+                        <ion-icon name="navigate"></ion-icon>
+                        <p style="color: lightseagreen;">Headquarters State</p>
+                        {{company.headquarters.state}}
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-                          <h2 text-center ion-text color="light"><ion-badge color="primary">Headquarters</ion-badge></h2>
-
-        
-                          <ion-grid class="person" *ngIf="company.headquarters">
-                            <ion-row>
-                                  <ion-col>
-                                    <ion-icon name="navigate"></ion-icon>
-                                    <u>headquarters adress</u>
-                                    {{company.headquarters.address}}
-                                </ion-col>
-                                <ion-col>
-                                        <ion-icon name="navigate"></ion-icon>
-                                        <u>headquarters adress</u>
-                                        {{company.headquarters.address}}
-                                    </ion-col>
-                                    <ion-col>
-                                            <ion-icon name="navigate"></ion-icon>
-                                            <u>headquarters city</u>
-                                            {{company.headquarters.city}}
-                                        </ion-col>
-                                        <ion-col>
-                                                <ion-icon name="navigate"></ion-icon>
-                                                <u>headquarters state</u>
-                                                {{company.headquarters.state}}
-                                            </ion-col>
-                            </ion-row>
-                        </ion-grid>
-          
-                        <h2 text-center ion-text color="light"><ion-badge color="primary">Summary</ion-badge></h2>
-
+            <ion-card-title text-center color="light">Summary</ion-card-title>
 
             <p ion-text text-center color="light">
                 {{company.summary}}
             </p>
-          
-        </ion-card-content>
-      </ion-card>
 
-    </ion-content>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>
