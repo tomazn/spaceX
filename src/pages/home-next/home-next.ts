@@ -47,16 +47,19 @@ export class HomeNextPage {
 
   countdownFn(res): void{
     let timestamp = res.launch_date_unix;
-    timestamp /= 1000;
+    let date = new Date(timestamp * 1000).getTime();
   setInterval(() => {
-      timestamp--;
+
+    let now = new Date().getTime();
+    let diff = date - now;
 
       this.countdown = {
-        days: Math.floor(timestamp / (24 * 60 * 60)),
-        hours: Math.floor(timestamp / (60 * 60)) % 24,
-        minutes: Math.floor(timestamp / 60) % 60,
-        seconds: Math.floor(timestamp / 1) % 60
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((diff % (1000 * 60)) / 1000)
       }
+
   }, 1000);
     }
 
