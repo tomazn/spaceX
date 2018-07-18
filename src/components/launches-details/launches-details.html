@@ -11,6 +11,41 @@
           <ion-card-title>
             {{launch.mission_name}}
             </ion-card-title>
+
+            <ion-row no-padding>
+                <ion-col class="link-col" text-center *ngIf="launch.links.video_link">
+                  <button ion-button clear small color="danger" icon-start>
+                    <ion-icon name="logo-youtube"></ion-icon>
+                    <a href="{{launch.links.video_link}}" target="_blank">youtube</a>
+                  </button>
+                </ion-col>
+                <ion-col class="link-col" text-center *ngIf="launch.links.wikipedia">
+                    <button ion-button clear small color="danger" icon-start>
+                      <img src="/assets/imgs/wiki.png">
+                      <a href="{{launch.links.wikipedia}}" target="_blank">wikipedia</a>
+                    </button>
+                  </ion-col>
+              </ion-row>
+
+              <h2 text-center ion-text color="light"><ion-badge color="primary">Specs</ion-badge></h2>
+              <ion-item-group class="specs">
+                  <ion-item (click)="navigateRocket(launch.rocket)">
+                      <ion-label>{{launch.rocket.rocket_name}} <ion-icon float-right name="rocket"></ion-icon></ion-label>
+                  </ion-item>
+                  <ion-item *ngFor="let cores of launch.rocket.first_stage.cores" (click)="navigateCores(cores)">
+                      <ion-label>{{cores.core_serial}} <ion-icon float-right name="construct"></ion-icon></ion-label>
+                  </ion-item>
+             
+                  <ion-item (click)="navigateLaunchpad(launch.launch_site)">
+                      <ion-label>{{launch.launch_site.site_name}} <ion-icon float-right name="locate"></ion-icon></ion-label>
+                  </ion-item>
+                </ion-item-group>
+
+              <h2 text-center ion-text color="light"><ion-badge color="primary">Details</ion-badge></h2>
+              <p ion-text text-center color="light">
+                  {{launch.details}}
+              </p>
+              
         </ion-card-content>
       </ion-card>
 </ion-content>
