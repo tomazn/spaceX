@@ -1,0 +1,38 @@
+page-home-latest {
+.latest img{
+    padding: 20px;
+}
+
+.title{
+    text-align: center;
+    padding-top: 25px;
+    font-weight: bold;
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.link-col{
+
+    a{
+        text-decoration: none;
+        color: red;
+        text-transform: uppercase;
+    }
+
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #ccc;
+    background-color: #fbfbfb;
+}
+
+  ion-icon{
+    font-size: 1em!important;
+    padding-right: 1.2em!important;
+  }
+
+  .specs{
+    border-top:1px solid #ccc;
+    margin-top: 2em;
+    padding-top: 1em;
+  }
+
+}

@@ -11,71 +11,116 @@
 <ion-card>
         <img src="assets/imgs/spacex.png"/>
         <ion-spinner *ngIf="loadCompany"></ion-spinner>
-        <ion-card-content *ngIf="company && !loadCompany">
-          <ion-card-title>
+        <ion-card-content *ngIf="company && !loadCompany" color="light">
+          <ion-card-title text-center color="secondary">
               {{company.name}}
             </ion-card-title>
          
-            <p>
-              <u>founder :</u> {{company.founder}}
-            </p>
+            <h2 text-center ion-text color="light"><ion-badge color="primary">Person</ion-badge></h2>
+            <ion-grid class="person">
+                    <ion-row>
+                      <ion-col>
+                            <ion-icon name="person"></ion-icon>
+                            <u>founder</u>
+                            {{company.founder}}
+                      </ion-col>
+                      <ion-col>
+                            <ion-icon name="person"></ion-icon>
+                            <u>ceo</u>
+                            {{company.ceo}}
+                      </ion-col>
+                      <ion-col>
+                            <ion-icon name="person"></ion-icon>
+                            <u>cto</u>
+                            {{company.cto}}
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                            <ion-col>
+                                  <ion-icon name="person"></ion-icon>
+                                  <u>coo</u>
+                                  {{company.coo}}
+                            </ion-col>
+                            <ion-col>
+                                  <ion-icon name="person"></ion-icon>
+                                  <u>cto propulsion</u>
+                                  {{company.cto_propulsion}}
+                            </ion-col>
+                            <ion-col>
+                                    <ion-icon name="people"></ion-icon>
+                                  <u>employees</u>
+                                  {{company.employees}}
+                            </ion-col>
+                          </ion-row>
+                  </ion-grid>
 
-            <p>
-                <u>founded :</u> {{company.founded}}
-            </p>
-            
-            <p>
-                <u>employees :</u> {{company.employees}}
-            </p>
+                  <h2 text-center ion-text color="light"><ion-badge color="primary">Number</ion-badge></h2>
+
+                  <ion-grid class="person">
+                        <ion-row>
+                          <ion-col>
+                                <ion-icon name="calendar"></ion-icon>
+                                <u>founded</u>
+                                {{company.founded}}
+                          </ion-col>
+                          <ion-col>
+                                <ion-icon name="car"></ion-icon>
+                                <u>vehicles</u>
+                                {{company.vehicles}}
+                          </ion-col>
+                          <ion-col>
+                                <ion-icon name="rocket"></ion-icon>
+                                <u>launch_sites</u>
+                                {{company.launch_sites}}
+                          </ion-col>
+                          </ion-row>
+                          <ion-row>
+                              <ion-col>
+                                    <ion-icon name="rocket"></ion-icon>
+                                    <u>test_sites</u>
+                                    {{company.test_sites}}
+                              </ion-col>
+                              <ion-col>
+                                    <ion-icon name="cash"></ion-icon>
+                                    <u>valuation</u>
+                                    {{company.valuation}}
+                              </ion-col>
+                          </ion-row>
+                          </ion-grid>
+
+                          <h2 text-center ion-text color="light"><ion-badge color="primary">Headquarters</ion-badge></h2>
+
+        
+                          <ion-grid class="person" *ngIf="company.headquarters">
+                            <ion-row>
+                                  <ion-col>
+                                    <ion-icon name="navigate"></ion-icon>
+                                    <u>headquarters adress</u>
+                                    {{company.headquarters.address}}
+                                </ion-col>
+                                <ion-col>
+                                        <ion-icon name="navigate"></ion-icon>
+                                        <u>headquarters adress</u>
+                                        {{company.headquarters.address}}
+                                    </ion-col>
+                                    <ion-col>
+                                            <ion-icon name="navigate"></ion-icon>
+                                            <u>headquarters city</u>
+                                            {{company.headquarters.city}}
+                                        </ion-col>
+                                        <ion-col>
+                                                <ion-icon name="navigate"></ion-icon>
+                                                <u>headquarters state</u>
+                                                {{company.headquarters.state}}
+                                            </ion-col>
+                            </ion-row>
+                        </ion-grid>
           
-            <p>
-                <u>vehicles :</u> {{company.vehicles}}
-            </p>
-          
-            <p>
-                <u>launch_sites :</u> {{company.launch_sites}}
-            </p>
-          
-            <p>
-                <u>test_sites :</u> {{company.test_sites}}
-            </p>
-          
-            <p>
-                <u>ceo :</u> {{company.ceo}}
-            </p>
-          
-            <p>
-                <u>cto :</u> {{company.cto}}
-            </p>
-            
-            <p>
-                <u>coo :</u> {{company.coo}}
-            </p>
-            
-            <p>
-                <u>cto_propulsion </u>: {{company.cto_propulsion}}
-            </p>
-            
-            <p>
-                <u>valuation :</u> {{company.valuation}}
-            </p>
-            
-            <div *ngIf="company.headquarters">
-              <p>
-                  <u>headquarters adress :</u> {{company.headquarters.address}}
-              </p>
-          
-             <p>
-                <u>headquarters city :</u> {{company.headquarters.city}}
-             </p>
-            
-              <p>
-                  <u>headquarters state :</u> {{company.headquarters.state}}
-              </p>
-            </div>
-          
-            <p>
-                <u>summary :</u> {{company.summary}}
+                        <h2 text-center ion-text color="light"><ion-badge color="primary">Summary</ion-badge></h2>
+
+
+            <p ion-text text-center color="light">
+                {{company.summary}}
             </p>
           
         </ion-card-content>

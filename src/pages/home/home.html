@@ -7,27 +7,9 @@
         <img src="assets/imgs/logo-spacex-white.png"/>
     </ion-title>
   </ion-navbar>
-  <ion-toolbar color="dark">
-    <ion-searchbar></ion-searchbar>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="card-background-page">
 
-  <h3>Welcome to SpaceX</h3>
+<ion-content padding>
+<home-page></home-page>
 
-  <p>The countdown</p>
-
-  <ion-slides pager>
-
-    <ion-slide *ngFor="let p of pages">
-      <ion-card>
-        <img src="assets/imgs/SpaceX.png"/>
-        <div class="card-title">{{p.title}}</div>
-        <div class="card-subtitle">41 Listings</div>
-      </ion-card>
-    </ion-slide>
-  
-  </ion-slides>
-
-</ion-content>

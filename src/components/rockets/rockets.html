@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Rockets</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+    <ion-spinner *ngIf="loadRockets"></ion-spinner>
+
+  <ion-card *ngFor="let rocket of rocketsList" (click)="navRocketDetails(rocket)">
+    <img src="assets/imgs/{{rocket.img}}"/>
+    <div class="card-title">{{rocket.name}}</div>
+    <div class="card-subtitle">{{rocket.type}}</div>
+  </ion-card>
+
+</ion-content>

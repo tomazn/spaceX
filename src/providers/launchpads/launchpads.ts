@@ -22,7 +22,7 @@ export class LaunchpadsProvider {
   }
 
   getLaunchpad(launchpadName): Promise<any> {
-    return this.http.get('https://api.spacexdata.com/v2/launchpads' + launchpadName)
+    return this.http.get('https://api.spacexdata.com/v2/launchpads/' + launchpadName)
       .toPromise()
       .then()
       .catch(this.handleError);

@@ -20,7 +20,6 @@
 
 <ion-content>
   <ion-spinner *ngIf="loadingLaunchpads"></ion-spinner>
-
   <ion-card *ngFor="let launchpad of launchpadsList">
     <img src="assets/imgs/launchpads.jpg"/>
     <ion-card-content>
@@ -32,18 +31,4 @@
       </button>
     </ion-card-content>
   </ion-card>
-  <!--
-    <ion-list>
-      <ion-item *ngFor="let launchpad of launchpadsList">
-        <ion-thumbnail item-start>
-          <img src="assets/imgs/launchpads.jpg">
-        </ion-thumbnail>
-        <h2>{{launchpad.full_name}}</h2>
-        <p>{{launchpad.details}}</p>
-        <button ion-button clear item-end (click)="navLaunchpadDetails(launchpad)">
-          <strong>Details</strong>
-        </button>
-      </ion-item>
-    </ion-list>
-  -->
 </ion-content>
