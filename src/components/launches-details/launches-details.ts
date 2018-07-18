@@ -50,7 +50,7 @@ export class LaunchesDetailsComponent {
   }
 
   navigateCores(core: any): void{
-    this.CoresProvider.getCores("/"+core)
+    this.CoresProvider.getCores("/"+core.core_serial)
     .then(
       res => {
         this.navCtrl.push(CoresDetailsComponent, res)
