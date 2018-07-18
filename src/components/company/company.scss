@@ -2,3 +2,15 @@ ion-spinner {
     width: 100%;
     margin: 20px 0;
 }
+
+.person ion-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.person ion-col ion-icon{
+    font-size: 2em;
+}

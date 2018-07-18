@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Launches Filters</ion-title>
+      <button class="close-modal" end (click)="closeModalFilter()">
+          close
+        </button>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+
+       <div>
+          <ion-label>Successful Launches</ion-label>
+        <button ion-button *ngFor="let SuccessLanche of SuccessLanches" [outline]="SuccessLanche != selectedSuccessLaunch" (click)="selectedSuccessLaunchFn(SuccessLanche)">{{SuccessLanche}}</button>
+       </div>
+
+<div>
+    <ion-label>Rockets</ion-label>
+    <button ion-button *ngFor="let rocket of rocketsFilter" [outline]="rocket != selectedRocketsFilter" (click)="selectRocket(rocket)">{{rocket}}</button>
+</div>
+  <ion-item *ngIf="launchesDate">
+      <ion-label>Launch year</ion-label>
+      <ion-select [(ngModel)]="selectedLaunchDateFilter">
+        <ion-option *ngFor="let launcheDate of launchesDate" [value]="launcheDate">{{launcheDate}}</ion-option>
+      </ion-select>
+</ion-item>
+
+
+  <button ion-button class="submitFilter" (click)="submitFilterFn()">Filter</button>
+</ion-content>

@@ -1,0 +1,30 @@
+page-home-next {
+    .title{
+        text-align: center;
+        padding-top: 25px;
+      text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .link-col{
+
+        a{
+            text-decoration: none;
+            color: red;
+            text-transform: uppercase;
+        }
+
+        border-top: 1px solid #CCC;
+        border-bottom: 1px solid #ccc;
+        background-color: #fbfbfb;
+    }
+
+    .legends .col{
+        font-size: 0.8em;
+    }
+
+  ion-icon{
+    font-size: 1em!important;
+    padding-right: 1.2em!important;
+  }
+}
