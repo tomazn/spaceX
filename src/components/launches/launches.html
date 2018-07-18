@@ -5,26 +5,51 @@
     </button>
     <ion-title>Launches</ion-title>
     <button *ngIf="!loadLaunches" class="open-modal" (click)="openModalFilter()">
-        <ion-icon name="funnel"></ion-icon>
+        <ion-icon color="light" name="funnel"></ion-icon>
     </button>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <ion-spinner *ngIf="loadLaunches"></ion-spinner>
-    <ion-searchbar *ngIf="!loadLaunches"
-  [(ngModel)]="launchesSearch"
-  (ionInput)="onInput($event)"
-  (ionCancel)="onCancel($event)">
-</ion-searchbar>
-    <ion-list *ngIf="launches">
-        <ion-item *ngIf="launches.length <= 0">No launches</ion-item>
-        <ion-item *ngFor="let launch of launches | LaunchesPipe:selectedSuccessLaunch:selectedRocketsFilter:selectedLaunchDateFilter" (click)="navLaunchDetails(launch)">
-          <ion-avatar item-start>
-            <img [src]="launch.links.mission_patch_small">
-          </ion-avatar>
-          <h2>{{launch.mission_name}}</h2>
-          <p>{{launch.launch_year}}</p>
-        </ion-item>
-      </ion-list>
+    <ion-slides pager>
+
+        <ion-slide>
+            <ion-spinner *ngIf="loadLaunches"></ion-spinner>
+            <ion-searchbar *ngIf="!loadLaunches"
+          [(ngModel)]="launchesSearch"
+          (ionInput)="onInput($event)"
+          (ionCancel)="onCancel($event)">
+        </ion-searchbar>
+            <ion-list *ngIf="launches">
+                <ion-item *ngIf="launches.length <= 0">No launches</ion-item>
+                <ion-item *ngFor="let launch of launches | LaunchesPipe:selectedSuccessLaunch:selectedRocketsFilter:selectedLaunchDateFilter" (click)="navLaunchDetails(launch)">
+                  <ion-avatar item-start>
+                    <img [src]="launch.links.mission_patch_small">
+                  </ion-avatar>
+                  <h2>{{launch.mission_name}}</h2>
+                  <p>{{launch.launch_year}}</p>
+                </ion-item>
+              </ion-list>
+        </ion-slide>
+      
+        <ion-slide *ngIf="stats">
+          <ion-list>
+              <ion-item>
+                Total launches : {{stats.total}}
+              </ion-item>
+              <ion-item>
+                  Success launches : {{stats.success}} / {{stats.total}}
+                </ion-item>
+                <ion-item>
+                    Reuse core : {{stats.reuseCore}} / {{stats.total}}
+                  </ion-item>
+                  <ion-item>
+                    Reuse capsule : {{stats.reuseCapsule}} / {{stats.total}}
+                    </ion-item>
+          </ion-list>
+        </ion-slide>
+      
+      </ion-slides>
+  
+
 </ion-content>
