@@ -4,23 +4,13 @@
       <ion-icon name="menu"></ion-icon> 
     </button> 
     <ion-title>Launchpads</ion-title> 
-  </ion-navbar> 
-  <div padding>
-    <ion-segment [(ngModel)]="pet">
-      <ion-segment-button value="kittens">
-        Kittens
-      </ion-segment-button>
-      <ion-segment-button value="puppies">
-        Puppies
-      </ion-segment-button>
-    </ion-segment>
-  </div>
+  </ion-navbar>
 </ion-header> 
    
 
 <ion-content>
   <ion-spinner *ngIf="loadingLaunchpads"></ion-spinner>
-  <ion-card *ngFor="let launchpad of launchpadsList">
+  <ion-card text-center *ngFor="let launchpad of launchpadsList">
     <img src="assets/imgs/launchpads.jpg"/>
     <ion-card-content>
       <ion-card-title color="light">

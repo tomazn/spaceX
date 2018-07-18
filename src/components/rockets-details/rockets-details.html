@@ -9,7 +9,7 @@
     <img src="assets/imgs/{{rocket.img}}"/>
     <ion-card-content text-center>
       <button ion-button>{{rocket.name}}</button>
-      <p>
+      <p style="color:white;">
         {{rocket.description}}
       </p>
     </ion-card-content>
@@ -20,9 +20,9 @@
       <button *ngIf="!rocket.active "ion-button color="danger">Unactive</button>
       <button ion-button><ion-icon name="rocket"></ion-icon> {{rocket.first_flight}}</button>
       <button ion-button full outline color="danger">From {{rocket.country}}</button>
-      <button ion-button outline><ion-icon name="rocket"></ion-icon> {{rocket.height.meters}}m </button>
-      <button ion-button outline><ion-icon name="rocket"></ion-icon> {{rocket.mass.kg}}kg </button>
-      <button ion-button outline><ion-icon name="rocket"></ion-icon> {{rocket.diameter.meters}}Ø </button>
+      <button ion-button color="secondary" outline><ion-icon name="rocket"></ion-icon> {{rocket.height.meters}}m </button>
+      <button ion-button color="secondary" outline><ion-icon name="rocket"></ion-icon> {{rocket.mass.kg}}kg </button>
+      <button ion-button color="secondary" outline><ion-icon name="rocket"></ion-icon> {{rocket.diameter.meters}}Ø </button>
     </ion-card-content>
   </ion-card>
   <ion-card>
