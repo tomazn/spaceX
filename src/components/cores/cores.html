@@ -8,7 +8,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-list no-lines>
+  <ion-spinner *ngIf="loadCores"></ion-spinner>
+  <ion-list no-lines *ngIf="coresList">
     <button ion-item *ngFor="let core of coresList" (click)="navCoresDetails(core)">
       {{ core.core_serial }}
     </button> 
