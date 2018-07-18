@@ -5,23 +5,22 @@
   </ion-header>   
 
 <ion-content>
-    <ion-card>
+    <ion-card text-center>
         <img src="assets/imgs/launchpads.jpg"/>
         <ion-card-content>
-          <ion-card-title color="light">
+          <ion-card-title style="color:lightseagreen">
             {{launchpad.full_name}}
           </ion-card-title>
-          <p>
+          <p style="color:whitesmoke;">
             {{launchpad.details}}
           </p>
-          <p>This launchpad have launch : </p>
-          <ul>
-            <li *ngFor="let vehicle of launchpad.vehicles_launched" >{{vehicle}}</li>
-          </ul>
-          <p><strong>Position:</strong></p>
-          <p>
-            {{launchpad.location.latitude}} | {{launchpad.location.longitude}}
-          </p>
+          <ion-card-title style="color:lightseagreen">This launchpad have launch </ion-card-title>
+            <button ion-button color="danger" outline *ngFor="let vehicle of launchpad.vehicles_launched" >{{vehicle}}</button>
+            <ion-card-title style="color:lightseagreen">
+                Position
+            </ion-card-title>
+             <button ion-button>{{launchpad.location.latitude}}</button>
+            <button ion-button color="secondary">{{launchpad.location.longitude}}</button>
         </ion-card-content>
       </ion-card>
 </ion-content>
