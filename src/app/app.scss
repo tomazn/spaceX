@@ -14,3 +14,37 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-spinner circle {
+  stroke: #FFF!important;
+}
+
+.sidebar{
+
+button ion-label{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+button ion-label img{
+  max-width: 40px;
+  margin-right: 10px;
+}
+
+button ion-icon{
+  font-size: 2em;
+  margin-right: 8px;
+  margin-left: 10px;
+}
+
+.toolbar-title{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.toolbar-title ion-icon{
+ margin-right: 5px;
+}
+}

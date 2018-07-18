@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { RocketsProvider } from '../../providers/rockets/rockets';
+import { RocketsDetailsComponent } from '../../components/rockets-details/rockets-details';
+import { LaunchpadsProvider } from '../../providers/launchpads/launchpads';
 import {LaunchesProvider} from '../../providers/launches/launches';
+import {LaunchpadsDetailsComponent} from '../../components/launchpads-details/launchpads-details';
 
 /**
  * Generated class for the HomeNextPage page.
@@ -16,7 +20,8 @@ import {LaunchesProvider} from '../../providers/launches/launches';
 })
 export class HomeNextPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private LaunchesProvider: LaunchesProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private LaunchpadsProvider: LaunchpadsProvider,
+     private RocketsProvider: RocketsProvider, private LaunchesProvider: LaunchesProvider) {
   }
 
   nextLaunch: any;
@@ -45,7 +50,7 @@ export class HomeNextPage {
     timestamp /= 1000;
   setInterval(() => {
       timestamp--;
-      
+
       this.countdown = {
         days: Math.floor(timestamp / (24 * 60 * 60)),
         hours: Math.floor(timestamp / (60 * 60)) % 24,
@@ -54,5 +59,28 @@ export class HomeNextPage {
       }
   }, 1000);
     }
+
+  navigateRocket(rocket: any): void{
+
+    this.RocketsProvider.getRocket(rocket.rocket_id)
+      .then(
+        res => {
+          res.img = res.id + ".jpg";
+          this.navCtrl.push(RocketsDetailsComponent, res);
+        },
+        error => console.log(error)
+      )
+
+  }
+
+  navigateLaunchpad(launchpad: any): void{
+    this.LaunchpadsProvider.getLaunchpad(launchpad.site_id)
+    .then(
+      res =>{
+        this.navCtrl.push(LaunchpadsDetailsComponent, res);
+      },
+      error => console.log(error)
+    )
+  }
 
 }

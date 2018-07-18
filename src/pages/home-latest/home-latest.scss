@@ -7,6 +7,8 @@ page-home-latest {
     text-align: center;
     padding-top: 25px;
     font-weight: bold;
+  color: #FFF;
+  text-decoration: underline;
 }
 
 .link-col{
@@ -21,4 +23,16 @@ page-home-latest {
     border-bottom: 1px solid #ccc;
     background-color: #fbfbfb;
 }
+
+  ion-icon{
+    font-size: 1em!important;
+    padding-right: 1.2em!important;
+  }
+
+  .specs{
+    border-top:1px solid #ccc;
+    margin-top: 2em;
+    padding-top: 1em;
+  }
+
 }
