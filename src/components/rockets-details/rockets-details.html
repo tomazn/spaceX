@@ -27,7 +27,7 @@
   </ion-card>
   <ion-card>
     <ion-card-content text-center>
-      <button ion-button color="dark" clear>First Stage</button>
+      <button ion-button color="light" clear>First Stage</button>
       <br>
       <button *ngIf="rocket.first_stage.reusable" ion-button color="secondary">Reusable</button>
       <button *ngIf="!rocket.first_stage.reusable" ion-button color="danger">Not Reusable</button>
@@ -38,7 +38,7 @@
   </ion-card>
   <ion-card>
     <ion-card-content text-center>
-      <button color="dark" ion-button clear>Second Stage</button>
+      <button color="light" ion-button clear>Second Stage</button>
       <ion-item>Engine(s) <ion-badge item-end>{{rocket.second_stage.engines}}</ion-badge></ion-item>
       <ion-item>Fuel Amount<ion-badge item-end>{{rocket.second_stage.fuel_amount_tons}} Tons</ion-badge></ion-item>
       <ion-item>Burn Time <ion-badge item-end="">{{rocket.second_stage.burn_time_sec}} Secs</ion-badge></ion-item>
@@ -46,10 +46,10 @@
   </ion-card>
   <ion-card>
     <ion-card-content text-center="">
-      <button ion-button clear>Engine(s)</button>
+      <button ion-button color="light" clear>Engine(s)</button>
       <ion-item>Number <ion-badge item-end>{{rocket.engines.number}}</ion-badge></ion-item>
       <ion-item>Type <ion-badge item-end>{{rocket.engines.type}}</ion-badge></ion-item>
-      <button ion-button clear>Propellants </button>
+      <button ion-button color="light" clear>Propellants </button>
       <br>
       <ion-badge>{{rocket.engines.propellant_1}}</ion-badge> <ion-badge>{{rocket.engines.propellant_2}}</ion-badge>
     </ion-card-content>
